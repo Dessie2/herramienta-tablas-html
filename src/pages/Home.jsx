@@ -30,7 +30,7 @@ const Home = ({ onStart }) => {
             onClick={onStart}
             className="bg-[#611232] hover:bg-[#4d0e28] text-white font-bold py-3 px-10 rounded-md text-xl shadow-[6px_6px_0px_rgba(0,0,0,0.2)] transition-all active:translate-y-1 active:shadow-none"
           >
-            Empezar a Crear Tablas
+            Empezar a Crear Tablas 
           </button>
         </div>
 
