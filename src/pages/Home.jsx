@@ -1,13 +1,18 @@
 import React from 'react';
+import {Header} from '../components';
+
 
 const Home = ({ onStart }) => {
   return (
     <div className="min-h-screen bg-[#E6EDF1] flex flex-col font-sans overflow-x-hidden">
-      {/* Navbar con Logos */}
+      {/* Navbar con Logos
+      
       <header className="p-6 flex justify-start items-center gap-6">
         <img src="/logo-tecnm.png" alt="TecNM" className="h-14 object-contain" />
         <img src="/logo-itp.png" alt="ITP" className="h-14 object-contain" />
       </header>
+      */}
+      <Header />
 
       {/* Contenido Principal */}
       <main className="flex-grow flex flex-col lg:flex-row items-center justify-between px-8 md:px-20 py-10 gap-10">
