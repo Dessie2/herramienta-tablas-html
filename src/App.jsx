@@ -1,21 +1,17 @@
-import { useState } from 'react';
-import Home from './pages/Home';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from "./pages/Home"
+import Concepts from "./pages/Concepts"
+
 
 function App() {
-  const [view, setView] = useState('home');
-
   return (
-    <>
-      {view === 'home' ? (
-        <Home onStart={() => setView('questions')} />
-      ) : (
-        <div className="p-10">
-           <button onClick={() => setView('home')} className="bg-gray-200 p-2 mb-4">Volver</button>
-           <QuestionsCard />
-        </div>
-      )}
-    </>
-  );
-} 
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/concepts" element={<Concepts />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
 
-export default App;
+export default App
