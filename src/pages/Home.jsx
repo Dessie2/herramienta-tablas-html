@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import tecnm from "../assets/images/logos/Logo_Tecnm.png";
 import itm from "../assets/images/logos/Logo_ITM.png";
+import mono from "../assets/images/logos/LogoHDEK_Blanc.svg";
+import tabla from "../assets/images/logos/Tabla-Home.svg";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -8,9 +10,9 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-[#E6EDF1] flex flex-col font-sans overflow-x-hidden">
 
-      <header className="p-6 flex justify-start items-center gap-8">
+      <header className="p-2 h-20 flex justify-start items-center gap-8">
         <img src={tecnm} alt="TecNM" className="h-20 object-contain" />
-        <img src={itm} alt="ITM" className="h-20 object-contain" />
+        <img src={itm} alt="ITM" className="h-24 object-contain" />
       </header>
 
 
@@ -41,12 +43,7 @@ const Home = () => {
         {/* Imagen de la Tabla */}
         <div className="flex-1 flex justify-center items-center">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-black opacity-10 blur-xl rounded-lg"></div>
-            <img 
-              src="/ejemplo-tabla.png" 
-              alt="Ejemplo de tabla" 
-              className="relative w-full max-w-md shadow-2xl rounded-sm border border-gray-200"
-            />
+            <img src={tabla} alt="Tabla-Ejemplo" className="w-[800px] h-[450px] -mt-26 ml-10 object-contain" />
           </div>
         </div>
       </main>
@@ -54,7 +51,7 @@ const Home = () => {
       {/* Footer */}
       <footer className="bg-[#1B396A] text-white py-4 px-12 flex justify-between items-center text-xs font-medium">
         <p>© 2025 EK-HDZ. Todos los derechos reservados.</p>
-        <img src="/logo-equipo.png" alt="Logo" className="h-6 opacity-80" />
+        <img src={mono} alt="LogoHDEK" className="h-8 opacity-80 text-white" />
       </footer>
     </div>
   );

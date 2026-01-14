@@ -1,6 +1,6 @@
-import tecnm from "../assets/images/logos/Logo_Tecnm.png";
-import itm from "../assets/images/logos/Logo_ITM.png";
-// import mono from "../assets/images/logos/Logo_Mono.png";
+import tecnm from "../assets/images/logos/Logo_Tecnm.svg";
+import itm from "../assets/images/logos/Logo_ITM.svg";
+import mono from "../assets/images/logos/LogoHDEK.svg";
 
 export const Header = () => {
   return (
@@ -8,7 +8,7 @@ export const Header = () => {
   
   <div className="w-full flex items-center justify-between px-0 h-full">
 
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 ml-5">
       <img 
         src={tecnm}
         alt="Logo_Tecnm" 
@@ -21,16 +21,15 @@ export const Header = () => {
       />
     </div>
         {/* DERECHA (MONO) */}
-        {/*
-        <div>
+        
+        <div className="mr-5">
           <img 
             src={mono}
             alt="Logo Mono"
             className="h-10 object-contain"
           />
         </div>
-        */}
-
+        
       </div>
     </header>
   );

@@ -25,7 +25,7 @@ export default function Concepts() {
 
         <main className="flex-1 bg-gray-100 p-10relative flex flex-col">
           {/* Título Principal */}
-          <h1 className="text-4xl font-extrabold text-blue-900 text-center mb-10">
+          <h1 className="text-4xl mt-2 font-extrabold text-blue-900 text-center mb-10">
             Definición y estructura básica de las <br /> Tablas en HTML
           </h1>
 
