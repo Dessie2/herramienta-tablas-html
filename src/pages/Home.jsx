@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import tecnm from "../assets/images/logos/Logo_Tecnm.png";
-import itm from "../assets/images/logos/Logo_ITM.png";
+import tecnm from "../assets/images/logos/Logo_Tecnm.svg";
+import itm from "../assets/images/logos/Logo_ITM.svg";
 import mono from "../assets/images/logos/LogoHDEK_Blanc.svg";
 import tabla from "../assets/images/logos/Tabla-Home.svg";
 
@@ -11,8 +11,8 @@ const Home = () => {
     <div className="min-h-screen bg-[#E6EDF1] flex flex-col font-sans overflow-x-hidden">
 
       <header className="p-2 h-20 flex justify-start items-center gap-8">
-        <img src={tecnm} alt="TecNM" className="h-20 object-contain" />
-        <img src={itm} alt="ITM" className="h-24 object-contain" />
+        <img src={tecnm} alt="TecNM" className="h-16 object-contain" />
+        <img src={itm} alt="ITM" className="h-16 object-contain" />
       </header>
 
 

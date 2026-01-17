@@ -59,7 +59,7 @@ export default function Concepts() {
             {tags.map((tag, i) => (
               <button
                 key={i}
-                onClick={() => navigate(`/tag/${tag.name.replace(/[<>]/g, "")}`)}
+                onClick={() => navigate(`/lessons/lesson1/${tag.name.replace(/[<>]/g, "")}`)}
                 className={`${tag.color} h-40 flex flex-col items-center justify-center rounded-sm shadow-sm hover:brightness-95 transition-all`}
               >
                 <span className="mb-10 text-2xl">⌄</span>
