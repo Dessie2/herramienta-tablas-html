@@ -63,7 +63,7 @@ export default function Table_more(){
             </div>
 
         {/*Boton inicio */}
-            <div className="-mt-0 flex justify-end mr-6">
+            <div className="mt-[50px] flex justify-end mr-6">
             <button  onClick={() => navigate("/concepts")} 
             className="bg-[#1B396A] text-white px-6 py-2 rounded-lg font-bold text-sm shadow-md hover:bg-red-900 transition-colors">
                 Volver al menú

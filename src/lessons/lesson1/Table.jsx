@@ -46,7 +46,7 @@ export default function Table(){
               </div>
 
                {/*Boton Ver más*/}
-              <div className="justify-end items-end mr-[10px] mt-[500px]">
+              <div className="justify-end items-end mr-[10px] mt-[600px]">
                 <button onClick={() => navigate("/lessons/lesson1/Table_more")} 
                 className="bg-[#1B396A] hover:bg-[#611232] text-white font-bold py-3 px-10 rounded-md text-xl shadow-[6px_6px_0px_rgba(0,0,0,0.2)] transition-all active:translate-y-1 active:shadow-none">
                   Visualizar más
@@ -55,13 +55,6 @@ export default function Table(){
 
             </div>
 
-            {/*Boton inicio */}
-              <div className="justify-start mt-[-50px] ml-10 mb-10">
-                <button  onClick={() => navigate("/concepts")} 
-                className="bg-[#1B396A] hover:bg-[#611232] text-white font-bold py-3 px-10 rounded-md text-xl shadow-[6px_6px_0px_rgba(0,0,0,0.2)] transition-all active:translate-y-1 active:shadow-none">
-                  Volver al inicio
-                </button>
-              </div>
 
            
            </div>
