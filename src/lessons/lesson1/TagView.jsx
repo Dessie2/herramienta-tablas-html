@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom"
 import Table from "./Table"
+import TH from "./TH"
 
 const tagComponents = {
-  table: Table
+  table: Table,
+  th : TH
 }
 
 export default function TagView() {

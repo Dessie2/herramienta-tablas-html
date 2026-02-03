@@ -14,13 +14,13 @@ export default function Table_more(){
         <div className="flex flex-1">
         <Sidebar/>
          {/*Contenido principal*/}
-          <main className="flex-1 bg-gray-100">
+          <main className="flex-1 bg-grisbg">
             {/* Título Principal */}
-          <h1 className="text-4xl mt-2 font-extrabold text-blue-900 text-center mb-10">
+          <h1 className="text-4xl mt-4 font-extrabold text-azul text-center mb-10">
             &lt;table&gt;
           </h1>
           {/*Contenedor principal */}
-           <div className="w-[full-20] h-[600px] bg-white ml-20 mr-20">
+           <div className="w-[full-20] h-[600px] bg-blanco ml-20 mr-20">
 
             {/*Contenido de la lección */}
             <div className="flex flex-row">
@@ -30,13 +30,13 @@ export default function Table_more(){
                         La etiqueta table es el pilar para crear la tabla, dentro de ella definiremos
                         filas, columnas, estilos y atributos
                         Se declara comenzando con 
-                        <span className="font-bold text-[#D15700]">&lt;table&gt;</span> y cierra con 
-                        <span className="font-bold text-[#D19800]">&lt;/table&gt;</span>. <br />
+                        <span className="font-bold text-amarillo">&lt;table&gt;</span> y cierra con 
+                        <span className="font-bold text-amarillo">&lt;/table&gt;</span>. <br />
                         Es importante que las característicasde nuestra tabla estén dentro de todo
                         el bloque, de lo contrario, solo aparecerá como texto simple
                         En el video adjunto podemos observar la creación de una tabla. <br />
                         Sin embargo, pareciera no haber nada, pero al
-                        usar el atributo <span className="font-bold text-[#D19800]">border</span> se genera un pequeño punto, ya que hacemos el borde mas ancho.
+                        usar el atributo <span className="font-bold text-amarillo">border</span> se genera un pequeño punto, ya que hacemos el borde mas ancho.
                         Esto sucede porque la tabla ya existe como un elemento, ocupando un espacio, pero al no tener 
                         filas ni columnas es difícil apreciarlo.
                     </h1>
@@ -63,9 +63,9 @@ export default function Table_more(){
             </div>
 
         {/*Boton inicio */}
-            <div className="mt-[50px] flex justify-end mr-6">
+            <div className="mt-[50px] mb-2 flex justify-end mr-6">
             <button  onClick={() => navigate("/concepts")} 
-            className="bg-[#1B396A] text-white px-6 py-2 rounded-lg font-bold text-sm shadow-md hover:bg-red-900 transition-colors">
+            className="bg-azul text-blanco px-6 py-2 rounded-lg font-bold text-sm shadow-md hover:bg-guinda transition-colors">
                 Volver al menú
             </button>
             </div>

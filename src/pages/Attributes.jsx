@@ -13,10 +13,10 @@ export default function Attributes() {
         <Sidebar />
 
         {/* CONTENIDO */}
-        <main className="flex-1 bg-[#EEF3F6] px-10 py-8">
+        <main className="flex-1 bg-grisbg px-10 py-8">
 
           {/* TÍTULO */}
-          <h1 className="text-3xl font-bold text-[#1E3A5F] text-center mb-4">
+          <h1 className="text-3xl font-bold text-azul text-center mb-4">
             Atributos de la tabla
           </h1>
 
@@ -49,7 +49,7 @@ export default function Attributes() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
 
             {/* CÓDIGO */}
-            <div className="bg-[#1E1E2E] text-gray-200 rounded-xl p-6 font-mono text-sm col-span-2 relative">
+            <div className="bg-griscroll text-gray-200 rounded-xl p-6 font-mono text-sm col-span-2 relative">
               <pre className="whitespace-pre-wrap">
                 {`<table border="1" width="500px">
                 <caption>Tabla de Muestra</caption>
