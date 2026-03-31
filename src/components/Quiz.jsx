@@ -3,19 +3,39 @@ import { lesson1Questions } from "../assets/preguntas/lesson1Questions"
 import { useNavigate } from "react-router-dom"
 
 const correctGifs = [
+  "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXFkZ2VoczR0anlveXltZWl5bW9tbmRyemtyenN1aGNibzFqYzczMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wtNOUuCzFKcaA/giphy.gif",
  "https://media.giphy.com/media/111ebonMs90YLu/giphy.gif",
- "https://media.giphy.com/media/3ohzdIuqJoo8QdKlnW/giphy.gif"
+ "https://media.giphy.com/media/3ohzdIuqJoo8QdKlnW/giphy.gif",
+ "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWR0c2U0emx1dGgyc3lmcnNhNHl5dDJ5NWNxMGR3dTRldHdyOXlvYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FHXojHUYbrxKdh0dFJ/giphy.gif",
+ "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHZ0bW1pcDV3NnE0dHZiaXJxbGJ1anQxZXlsNG1xd2oxb3dybmIyZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NVBR6cLvUjV9C/giphy.gif",
+ "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDd1djc2N3lvejdkZnBwM3dxcGoxcnRqZWRleXRrMW51NTB3aDEwNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/623GsYzT908Z63VOs1/giphy.gif",
+ "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXdqc3hmaWRsazBpa25ubnhoaHllMW13dTdnenlkd2FpbHNuanFqdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1W40UWS9peSru/giphy.gif"
 ]
 
 const incorrectGifs = [
+  "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3Jld29hYXZjMjN5cjV4aTR6cjFsaml3cnVvdWd5MTZ0MTd1OW9zMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/McmEgVHMekWQ/giphy.gif",
+  "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmVmaHNxMWxuNzNraXBiczY2Y2c4eW5nbTZ0cjE2d2Z0cXl5YmM1byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o85xC73J7y0c9wJWM/giphy.gif",
  "https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif",
- "https://media.giphy.com/media/6uGhT1O4sxpi8/giphy.gif",
- "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzB4endwNDlhM2tjbXhvb3RtN3pwM29ndndhZGdxNXN5cjZ2NThrMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RLi2oeVZiVkE8/giphy.gif"
+ "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzB4endwNDlhM2tjbXhvb3RtN3pwM29ndndhZGdxNXN5cjZ2NThrMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RLi2oeVZiVkE8/giphy.gif",
+ "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExamQ0eXg0eGd3dnFxdGdvY3J1ZmE2MHVjdGl2OWMybmZ4eng2aG50eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uSoDr54W9M3uSBiTST/giphy.gif",
+ "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGlkdjRqajV6OXN2azk3eGM4eWo2NnY3Y2NrYnh3dTd5NWoydWZiOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8ezz6fUfcWYlDFtKxK/giphy.gif",
+ "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2p4aTVwcHFqM3FsaXVtdnUwbmI4NGhjd2I2MmVydWphZ3F5cTNlMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uN0SyFsLsXQ9MbS05S/giphy.gif"
 ]
 
 const neutralGifs = [
+ "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExamc5OXpyYmsyemJwbno4aHQ5c2V1Ymk2Z25nNDkxYndiNzkzd3Z3dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GuWSJPF6bEkKs/giphy.gif",
+ "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWg5cGp6cDFyYWZ5ZDltczR6dTQxdjR2YWU5MWI5NG0xeW91MTI5ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l41lVsYDBC0UVQJCE/giphy.gif",
  "https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif",
- "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif"
+ "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGJ3cHkzem92bGM1c3JibnBib24xYTBxeWI1eGcwYnJwNmV6c2R2MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bhPr2MgVRoL7wvlWTs/giphy.gif",
+ "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
+ "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTJucWtramVnbmE1Z3hvN3k3OXR5ZnFpYWphb3NwNzNjZGU5dWd3NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YAa6eYva5IMEw/giphy.gif",
+ "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHl1NXZmNWdjNjRnZWxsMnBsdXB4a3NkOTQzemI3NWs5ZGtpYW1xMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/phj798KapKrgMk95GY/giphy.gif",
+ "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXFmNTJ3ZGR6NGZ0ZG1zd3I0NDhjbmxwbW80NHdnaTRnbWVsb2k2ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gMGwUr8mK04hUMK7Y8/giphy.gif",
+ "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnhyYWVuaTk1NGdpbnZkZGxkNWF1a2k5YXhyNHlieGU5YnBrcGZkZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hrGLLFPzISpaGYAMzY/giphy.gif",
+ "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXE3ZmViOHUyeTlkMDRvanZpYzdzNTg5Z2FnbzAwaHFmeDVteG00YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/H4DjXQXamtTiIuCcRU/giphy.gif"
+
+
+
 ]
 
 export default function Quiz() {
