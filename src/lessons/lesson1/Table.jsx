@@ -1,12 +1,11 @@
 import { Sidebar } from "../../components/Sidebar"
 import { Header } from "../../components/Header"
-import tabla from "../../assets/images/leccion_1/Ejemplo_table.svg";
 import { useNavigate } from 'react-router-dom';
 
 export default function Table(){
   const navigate = useNavigate()
     return(
-        <div>
+        <div className="min-h-screen flex flex-col font-sans text-slate-800">
         {/*Header*/}
         <Header/>
 
@@ -14,25 +13,26 @@ export default function Table(){
         <div className="flex flex-1">
         <Sidebar/>
          {/*Contenido principal*/}
-          <main className="flex-1 bg-gray-100">
+          <main className="flex-1 bg-grisbg flex flex-col">
             {/* Título Principal */}
-          <h1 className="text-4xl mt-2 font-extrabold text-blue-900 text-center mb-10">
-            Definición y estructura básica de las <br /> Tablas en HTML
+          <h1 className="text-4xl mt-4 font-extrabold text-azul text-center mb-10">
+            Etiqueta &lt;table&gt;
           </h1>
 
            {/*Contenedor principal */}
-           <div className="w-[full-20] h-[600px] bg-white ml-20 mr-20">
+           <div className="flex-1 flex justify-center items-start">
+            <div className="bg-blanco w-[1100px] min-h-[600px] rounded-md shadow-md p-10 flex flex-col">
 
             {/*Contenido de la lección */}
-            <div className="flex flex-row">
+            <div className="flex gap-10">
               {/*Texto */}
               <div className="ml-10 mt-10 flex flex-col text-3xl p-3 gap-8 max-w-md">
               <h1>
-                La etiqueta <span className="font-bold text-yellow-600 ">&lt;table&gt;</span> nos permite 
+                La etiqueta <span className="font-bold text-amarillo">&lt;table&gt;</span> nos permite 
                 crear una tabla en HTML. Dentro 
-                de ella colocamos las filas <span className="font-bold text-yellow-600 ">&lt;tr&gt;</span> y
+                de ella colocamos las filas <span className="font-bold text-amarillo">&lt;tr&gt;</span> y
                 las celdas, que pueden ser 
-                encabezados <span className="font-bold text-yellow-600 ">&lt;th&gt;</span> o datos <span className="font-bold text-yellow-600 ">&lt;td&gt;</span>.
+                encabezados <span className="font-bold text-amarillo">&lt;th&gt;</span> o datos <span className="font-bold text-amarillo">&lt;td&gt;</span>.
                 Con estas etiquetas organizamos 
                 la información en filas y columnas
                 para visualizarla de forma clara 
@@ -40,25 +40,37 @@ export default function Table(){
               </h1>
               </div>
 
-              {/*Imagen */}
-              <div>
-                <img src={tabla} alt="Ejemplo_Table"  className="w-[800px] h-[530px] mt-10 ml-10 object-contain"/>
-              </div>
+              {/* CÓDIGO */}
+            <div className="bg-[#1E1E2E] text-gray-200 rounded-xl p-6 font-mono text-sm col-span-2 relative">
+              <pre className="whitespace-pre-wrap">
+                {`
 
-               {/*Boton Ver más*/}
-              <div className="justify-end items-end mr-[10px] mt-[600px]">
+  <table>                  
+  <tbody>
+  <tr>
+    <td>Celda A1</td>
+    <td>Celda A2</td>
+  </tr>
+  <tr>
+    <td>Celda B1</td>
+    <td>Celda B2</td>
+  </tr>
+</tbody>
+</table>
+  `}
+              </pre>
+            </div>
+
+            </div>
+             {/*Boton Ver más*/}
+              <div className="flex justify-end mt-auto pt-2">
                 <button onClick={() => navigate("/lessons/lesson1/Table_more")} 
-                className="bg-[#1B396A] hover:bg-[#611232] text-white font-bold py-3 px-10 rounded-md text-xl shadow-[6px_6px_0px_rgba(0,0,0,0.2)] transition-all active:translate-y-1 active:shadow-none">
+                className="bg-azul hover:bg-guinda text-blanco font-bold py-2 px-8 rounded-md text-xl shadow-[6px_6px_0px_rgba(0,0,0,0.2)] transition-all active:translate-y-1 active:shadow-none">
                   Visualizar más
                 </button>
               </div>
-
-            </div>
-
-
-           
            </div>
-
+           </div>
           </main>
 
         </div>

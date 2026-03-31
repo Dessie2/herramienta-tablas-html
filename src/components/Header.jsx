@@ -5,7 +5,7 @@ import mono from "../assets/images/logos/LogoHDEK.svg";
 
 export const Header = () => {
   return (
-    <header className="w-full h-16 bg-white shadow-md">
+    <header className="w-full h-16 blanco shadow-md">
       <div className="w-full flex items-center justify-between px-0 h-full">
 
         <div className="flex items-center gap-4 ml-5">

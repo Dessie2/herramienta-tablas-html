@@ -10,7 +10,7 @@ export default function QuizPage() {
       <div className="flex flex-1">
         <Sidebar />
 
-        <main className="flex-1 bg-gray-100 p-10 flex items-center justify-center">
+        <main className="flex-1 bg-grisbg p-10 flex items-center justify-center">
           <Quiz />
         </main>
       </div>
