@@ -9,7 +9,8 @@ const correctGifs = [
 
 const incorrectGifs = [
  "https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif",
- "https://media.giphy.com/media/6uGhT1O4sxpi8/giphy.gif"
+ "https://media.giphy.com/media/6uGhT1O4sxpi8/giphy.gif",
+ "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzB4endwNDlhM2tjbXhvb3RtN3pwM29ndndhZGdxNXN5cjZ2NThrMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RLi2oeVZiVkE8/giphy.gif"
 ]
 
 const neutralGifs = [
@@ -26,7 +27,7 @@ export default function Quiz() {
   const [showFeedback, setShowFeedback] = useState(false)
   const [isCorrect, setIsCorrect] = useState(false)
   const [currentGif, setCurrentGif] = useState("")
-  const [timeLeft, setTimeLeft] = useState(30)
+  const [timeLeft, setTimeLeft] = useState(20)
   const [isTimerActive, setIsTimerActive] = useState(true)
 
   useEffect(() => {
@@ -56,7 +57,7 @@ export default function Quiz() {
     setCurrentQuestion(question)
     setSelectedAnswer(null)
     setShowFeedback(false)
-    setTimeLeft(30)
+    setTimeLeft(20)
     setIsTimerActive(true)
 
     const randomGif = neutralGifs[Math.floor(Math.random()*neutralGifs.length)]
