@@ -32,7 +32,7 @@ export default function Attributes() {
 
           {/* BOTONES SUPERIORES */}
           <div className="flex justify-center gap-6 mb-10">
-            <button className="bg-[#6B1237] text-white px-6 py-2 rounded-lg font-medium">
+            <button className="bg-[#2E5F8A] text-white px-6 py-2 rounded-lg font-medium">
               Atributos Relación-Aspecto
             </button>
 
@@ -107,7 +107,7 @@ export default function Attributes() {
           <div className="flex justify-end mt-10">
             <button
               onClick={() => navigate("/lessons/lesson1/Table_more")}
-              className="bg-[#6B1237] text-white px-6 py-2 rounded-lg font-medium"
+              className="bg-[#2E5F8A] text-white px-6 py-2 rounded-lg font-medium"
             >
               Siguiente Lección
             </button>
