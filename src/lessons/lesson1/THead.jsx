@@ -2,7 +2,7 @@ import { Sidebar } from "../../components/Sidebar"
 import { Header } from "../../components/Header"
 import { useNavigate } from 'react-router-dom';
 
-export default function TH(){
+export default function THead(){
   const navigate = useNavigate()
     return(
         <div className="h-screen flex flex-col">
@@ -18,7 +18,7 @@ export default function TH(){
         <main className="bg-grisbg flex-1 flex flex-col p-20">
             {/* Título Principal */}
             <h1 className="text-4xl font-extrabold text-azul text-center mb-4 -mt-16">
-              Etiqueta &lt;th&gt;
+              Etiqueta &lt;thead&gt;
             </h1>
 
             {/*Contenedor blanco */}
@@ -28,38 +28,37 @@ export default function TH(){
                     {/*Texto */}
                     <div className="p-20 flex flex-col text-4xl max-w-2xl">
                         <h1>
-                            La etiqueta <span className="font-bold text-amarillo">&lt;th&gt;</span> nos permite indicar los títulos o encabezados de las celdas en las tablas HTML.
-                            Es una gran ayuda visual ya que es más fácil identificar las partes de la tabla.
+                            La etiqueta <span className="font-bold text-amarillo">&lt;thead&gt;</span> podria ser confundida
+                            o mal interpretada como una versión de th, pero sus funciones son diferentes.
+                            <span className="font-bold text-amarillo">&lt;thead&gt;</span> nos ayuda a indicar el encabezado de la tabla,
+                            actuando más como un contenedor.
                         </h1>
                     </div>
                      {/*Código */}
-                    <div className="text-3xl bg-griscroll text-grisbg w-[500px] h-[500px] p-10 m-12 rounded-lg">
+                    <div className="text-3xl bg-griscroll text-grisbg w-[500px] h-[500px] pl-10 m-12 rounded-lg">
                         <pre className="whitespace-pre-wrap">
-                            {`                         
-<table border="1">
-  <tr>`} <span className="text-amarillo">{`
+                            {`                                                    
+<table border="1">`}
+<span className="text-amarillo">{`
+<thead>`}</span>{`
+  <tr>
     <th>Encabezado 1</th>
-    <th>Encabezado 2</th>`}
-    </span> {`
+    <th>Encabezado 2</th>
    </tr>
+`}<span className="text-amarillo">{`</thead>`}</span>{`
    <tr>
     <td>Celda A1</td>
     <td>Celda A2</td>
    </tr>
  </table>`}
                         </pre>
-                        
-
                     </div>
-                    
-
-
                 </div>
 
             </div>
             {/*botón ver más */}
             <div className="flex justify-end mt-auto pt-2">
-                <button onClick={() => navigate("/lessons/lesson1/TH_More")} 
+                <button onClick={() => navigate("/lessons/lesson1/Thead_more")} 
                 className="bg-azul hover:bg-guinda text-blanco font-bold py-2 px-8 rounded-md text-xl shadow-[6px_6px_0px_rgba(0,0,0,0.2)] transition-all active:translate-y-1 active:shadow-none">
                   Visualizar más
                 </button>
