@@ -9,6 +9,12 @@ const categories = [
   { id: "style", label: "Atributos de Estilo" },
 ]
 
+const categoryUrlMapping = {
+  relation: "relAspc",
+  global: "global",
+  style: "estilo", 
+}
+
 const attributesByCategory = {
   relation: [
     {
@@ -17,6 +23,14 @@ const attributesByCategory = {
       tableAttrs: 'border="1" cellspacing="10"',
       description:
         "La propiedad cellspacing en HTML define el espacio entre las celdas de una tabla, separando visualmente cada celda del resto.",
+      showDiagram: false,
+    },
+        {
+      id: "cellpadding",
+      name: "cellpadding",
+      tableAttrs: 'border="1" cellpadding="12"',
+      description:
+        "El atributo cellpadding controla el espacio interno entre el contenido de una celda y su borde.",
       showDiagram: false,
     },
     {
@@ -70,6 +84,14 @@ const attributesByCategory = {
       showDiagram: false,
     },
     {
+      id: "style",
+      name: "style",
+      tableAttrs: 'style="border: 2px solid #3498db; border-collapse: collapse;"',
+      description:
+        "El atributo style te permite aplicar propiedades modernas de CSS directamente en la etiqueta de la tabla, siendo la alternativa recomendada para controlar bordes, fondos y márgenes avanzados.",
+      showDiagram: false,
+    },
+    {
       id: "title",
       name: "title",
       tableAttrs: 'border="1" title="Tabla informativa"',
@@ -88,19 +110,19 @@ const attributesByCategory = {
       showDiagram: false,
     },
     {
-      id: "cellpadding",
-      name: "cellpadding",
-      tableAttrs: 'border="1" cellpadding="12"',
-      description:
-        "El atributo cellpadding controla el espacio interno entre el contenido de una celda y su borde.",
-      showDiagram: false,
-    },
-    {
       id: "background",
       name: "background",
       tableAttrs: 'border="1" background="fondo.png"',
       description:
         "El atributo background permite colocar una imagen de fondo dentro de la tabla para personalizar su apariencia.",
+      showDiagram: false,
+    },
+    {
+      id: "bordercolor",
+      name: "bordercolor",
+      tableAttrs: 'border="1" bordercolor="#e74c3c"',
+      description:
+        "El atributo bordercolor cambia el color de todos los bordes de la tabla, permitiendo personalizarlos para que coincidan con la paleta de tu diseño.",
       showDiagram: false,
     },
   ],
@@ -310,10 +332,15 @@ export default function Attributes() {
                     )
                   )}
                 </p>
-
-                <button className="bg-azul text-white px-5 py-1.5 rounded-lg text-sm hover:bg-guinda transition-colors">
-                  Ver más
-                </button>
+              <button 
+                onClick={() => {
+                  const folderName = categoryUrlMapping[activeCategory] || activeCategory;
+                  navigate(`/lessons/lesson2/${folderName}/${current.id}`);
+                }}
+                className="bg-azul text-white px-5 py-1.5 rounded-lg text-sm hover:bg-guinda transition-colors"
+              >
+                Ver más
+              </button>
               </div>
             </div>
 
