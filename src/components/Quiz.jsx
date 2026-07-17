@@ -116,7 +116,7 @@ export default function Quiz() {
     }
   }
 
-  const getOptionClassName = (index) => {
+    const getOptionClassName = (index) => {
     if (!showFeedback) {
       return selectedAnswer === index
         ? "bg-blue-200 border-blue-400"
@@ -136,7 +136,7 @@ export default function Quiz() {
 
   if (!currentQuestion) return null
 
-  const progress = (timeLeft/30)*100
+  const progress = (timeLeft/20)*100
 
   return (
     <div className="max-w-6xl w-full bg-white rounded-xl shadow-xl p-12">

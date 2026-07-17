@@ -24,13 +24,14 @@ export default function Concepts() {
         <Sidebar />
 
         <main className="flex-1 bg-grisbg p-10 relative flex flex-col">
+          <div className="content-container flex flex-col flex-1">
           {/* Título Principal */}
           <h1 className="text-4xl mt-2 font-extrabold text-azul text-center mb-10">
             Definición y estructura básica de las <br /> Tablas en HTML
           </h1>
 
           {/* Texto Descriptivo */}
-          <div className="max-w-4xl mx-auto text-lg leading-relaxed mb-5">
+          <div className="text-lg leading-relaxed mb-5">
             <p className="mb-4">
               En este tema vamos a ver cómo trabajar con tablas dentro de una página web. Podemos insertar 
               <span className="text-amarillo font-semibold"> tablas, filas y columnas</span>, y modificar sus 
@@ -44,7 +45,7 @@ export default function Concepts() {
           </div>
 
           {/* Botón Ejemplo */}
-          <div className="flex justify-end max-w-5xl mx-auto w-full mb-2">
+          <div className="flex justify-end w-full mb-2">
             <div className="flex flex-col items-center cursor-pointer animate-pulse duration-200 hover:scale-105 hover:text-guinda">
               <span className="font-semibold">Ejemplo</span>
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,7 +56,7 @@ export default function Concepts() {
           </div>
 
           {/* Cuadrícula de Tags */}
-          <div className="grid grid-cols-4 gap-4 max-w-5xl mx-auto w-full">
+          <div className="grid grid-cols-4 gap-4 w-full">
             {tags.map((tag, i) => (
               <button
                 key={i}
@@ -77,6 +78,7 @@ export default function Concepts() {
                    Siguiente Lección
                  </button>
 
+          </div>
           </div>
         </main>
       </div>

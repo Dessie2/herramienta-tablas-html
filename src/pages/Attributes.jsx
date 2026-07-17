@@ -14,6 +14,7 @@ export default function Attributes() {
 
         {/* CONTENIDO */}
         <main className="flex-1 bg-grisbg px-10 py-8">
+          <div className="content-container">
 
           {/* TÍTULO */}
           <h1 className="text-3xl font-bold text-azul text-center mb-4">
@@ -21,7 +22,7 @@ export default function Attributes() {
           </h1>
 
           {/* DESCRIPCIÓN */}
-          <p className="max-w-4xl mx-auto text-center text-gray-700 mb-8">
+          <p className="text-center text-gray-700 mb-8">
             Las tablas pueden tener diferentes{" "}
             <span className="text-orange-500 font-semibold">atributos</span>{" "}
             para mejorar su estilización, tales como colores, formas,
@@ -113,6 +114,7 @@ export default function Attributes() {
             </button>
           </div>
 
+          </div>
         </main>
       </div>
     </div>

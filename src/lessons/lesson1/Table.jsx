@@ -13,15 +13,15 @@ export default function Table(){
         <div className="flex flex-1">
         <Sidebar/>
          {/*Contenido principal*/}
-          <main className="flex-1 bg-grisbg flex flex-col">
+          <main className="flex-1 bg-grisbg flex flex-col p-10">
+            <div className="content-container flex flex-col flex-1">
             {/* Título Principal */}
           <h1 className="text-4xl mt-4 font-extrabold text-azul text-center mb-10">
             Etiqueta &lt;table&gt;
           </h1>
 
            {/*Contenedor principal */}
-           <div className="flex-1 flex justify-center items-start">
-            <div className="bg-blanco w-[1100px] min-h-[600px] rounded-md shadow-md p-10 flex flex-col">
+            <div className="bg-blanco w-full min-h-[600px] rounded-md shadow-md p-10 flex flex-col">
 
             {/*Contenido de la lección */}
             <div className="flex gap-10">

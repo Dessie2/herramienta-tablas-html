@@ -17,7 +17,8 @@ const Home = () => {
 
 
       {/* Contenido Principal */}
-      <main className="flex-grow flex flex-col lg:flex-row items-center justify-between px-8 md:px-20 py-10 gap-10">
+      <main className="flex-grow px-8 md:px-20 py-10">
+        <div className="content-container flex flex-col lg:flex-row items-center justify-between gap-10">
 
         {/* Texto y Botón */}
         <div className="flex-1 max-w-2xl text-left">
@@ -63,8 +64,9 @@ const Home = () => {
         {/* Imagen de la Tabla */}
         <div className="flex-1 flex justify-center items-center">
           <div className="relative group">
-            <img src={tabla} alt="Tabla-Ejemplo" className="w-[800px] h-[450px] -mt-26 ml-10 object-contain" />
+            <img src={tabla} alt="Tabla-Ejemplo" className="w-[600px] mx-auto h-auto -mt-26 object-contain" />
           </div>
+        </div>
         </div>
       </main>
 

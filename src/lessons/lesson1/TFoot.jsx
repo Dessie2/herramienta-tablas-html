@@ -16,6 +16,7 @@ export default function TFoot(){
 
         {/*Contenido principal*/}
         <main className="bg-grisbg flex-1 flex flex-col p-20">
+            <div className="content-container flex flex-col flex-1">
             {/* Título Principal */}
             <h1 className="text-4xl font-extrabold text-azul text-center mb-4 -mt-16">
               Etiqueta &lt;tfoot&gt;
@@ -69,6 +70,7 @@ export default function TFoot(){
                   Visualizar más
                 </button>
               </div>
+            </div>
 
         </main>
        

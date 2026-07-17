@@ -13,6 +13,7 @@ export default function Tbody_more() {
             <Sidebar/>
             
         <main className="bg-grisbg flex-1 flex flex-col p-20">
+            <div className="content-container flex flex-col flex-1">
                 <h1 className="text-4xl font-extrabold text-azul text-center mb-4 -mt-16">
                 Etiqueta &lt;tbody&gt;
                 </h1>
@@ -101,6 +102,7 @@ export default function Tbody_more() {
             className="bg-azul text-blanco px-6 py-2 rounded-lg font-bold text-sm shadow-md hover:bg-guinda transition-colors">
                 Volver al menú
             </button>
+            </div>
             </div>
 
             </main>

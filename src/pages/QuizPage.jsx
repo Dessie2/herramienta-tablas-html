@@ -11,7 +11,9 @@ export default function QuizPage() {
         <Sidebar />
 
         <main className="flex-1 bg-grisbg p-10 flex items-center justify-center">
-          <Quiz />
+          <div className="content-container">
+            <Quiz />
+          </div>
         </main>
       </div>
     </div>

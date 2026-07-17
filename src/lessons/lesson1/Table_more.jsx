@@ -14,13 +14,14 @@ export default function Table_more(){
         <div className="flex flex-1">
         <Sidebar/>
          {/*Contenido principal*/}
-          <main className="flex-1 bg-grisbg">
+          <main className="flex-1 bg-grisbg p-10">
+            <div className="content-container flex flex-col">
             {/* Título Principal */}
           <h1 className="text-4xl mt-4 font-extrabold text-azul text-center mb-10">
             &lt;table&gt;
           </h1>
           {/*Contenedor principal */}
-           <div className="w-[full-20] h-[600px] bg-blanco ml-20 mr-20">
+           <div className="bg-blanco w-full min-h-[600px] rounded-md p-10">
 
             {/*Contenido de la lección */}
             <div className="flex flex-row">
@@ -50,9 +51,9 @@ export default function Table_more(){
                         className="w-[400px] h-[300px] ml-[200px] object-contain"/>
                     </div>
                     {/*Video de ejemplo */}
-                    <div>
+                    <div className="flex justify-center">
                         <iframe src="https://www.youtube.com/embed/kT6UCsMssck"
-                        className="w-[600px] h-[400px] -mt-10 ml-20 mb-10 object-contain">
+                        className="w-[600px] h-[400px] -mt-10 mb-10">
 
                         </iframe>
                     </div>
@@ -63,11 +64,12 @@ export default function Table_more(){
             </div>
 
         {/*Boton inicio */}
-            <div className="mt-[50px] mb-2 flex justify-end mr-6">
+            <div className="mt-[50px] mb-2 flex justify-end">
             <button  onClick={() => navigate("/concepts")} 
             className="bg-azul text-blanco px-6 py-2 rounded-lg font-bold text-sm shadow-md hover:bg-guinda transition-colors">
                 Volver al menú
             </button>
+            </div>
             </div>
 
            </main>
