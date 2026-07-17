@@ -71,9 +71,9 @@ const Home = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-azul text-blanco py-4 px-12 flex justify-between items-center text-xs font-medium">
+      <footer className="bg-azul text-blanco py-4 px-12 flex justify-center items-center text-xs font-medium">
         <p>© 2025 EK-HDZ. Todos los derechos reservados.</p>
-        <img src={mono} alt="LogoHDEK" className="h-8 opacity-80 blanco" />
+         <img src={mono} alt="LogoHDEK" className="absolute right-12 h-8 opacity-80 blanco"/>
       </footer>
     </div>
   );
