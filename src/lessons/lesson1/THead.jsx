@@ -1,6 +1,7 @@
 import { Sidebar } from "../../components/Sidebar"
 import { Header } from "../../components/Header"
 import { useNavigate } from 'react-router-dom';
+import LessonNavRow from "../../components/LessonNavRow";
 
 export default function THead(){
   const navigate = useNavigate()
@@ -66,6 +67,7 @@ export default function THead(){
               </div>
             </div>
 
+            <LessonNavRow backTo="/concepts" />
         </main>
        
          

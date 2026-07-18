@@ -10,10 +10,20 @@ export default {
         pop: {
           '0%': { transform: 'scale(.3)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' }
+        },
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' }
         }
       },
       animation: {
         pop: 'pop .4s ease',
+        'fade-up': 'fade-up .5s ease both',
+        wiggle: 'wiggle 2s ease-in-out infinite',
       },
       /*Arreglo de colores variables */
       colors:{

@@ -1,9 +1,8 @@
 import { Sidebar } from "../../components/Sidebar"
 import { Header } from "../../components/Header"
-import { useNavigate } from 'react-router-dom';
+import LessonNavRow from "../../components/LessonNavRow"
 
 export default function Thead_more() {
-  const navigate = useNavigate()
   return (
     <div className="h-screen flex flex-col">
         <div>
@@ -12,7 +11,7 @@ export default function Thead_more() {
         <div className="flex flex-1">
             <Sidebar/>
             
-        <main className="bg-grisbg flex-1 flex flex-col p-20">
+        <main className="bg-grisbg flex-1 min-w-0 flex flex-col p-4 sm:p-6 md:p-10 overflow-x-hidden">
             <div className="content-container flex flex-col flex-1">
                 <h1 className="text-4xl font-extrabold text-azul text-center mb-4 -mt-16">
                 Etiqueta &lt;tr&gt;
@@ -64,14 +63,10 @@ export default function Thead_more() {
                 
             </div>
 
+            </div>
+
             {/*Boton inicio */}
-            <div className="flex justify-end mr-6 m-6">
-            <button  onClick={() => navigate("/concepts")} 
-            className="bg-azul text-blanco px-6 py-2 rounded-lg font-bold text-sm shadow-md hover:bg-guinda transition-colors">
-                Volver al menú
-            </button>
-            </div>
-            </div>
+            <LessonNavRow backTo="/concepts" />
 
             </main>
         </div>

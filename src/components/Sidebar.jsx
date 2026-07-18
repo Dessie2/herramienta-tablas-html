@@ -1,73 +1,101 @@
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
-import { useState } from "react";
+function SidebarIcon({ children, className = "" }) {
+  return (
+    <svg
+      className={`w-6 h-6 shrink-0 ${className}`}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      {children}
+    </svg>
+  )
+}
+
+const sections = [
+  {
+    id: "lesson1",
+    label: "Descripci?n y Estructura B?sica",
+    to: "/concepts",
+    icon: (
+      <path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.6V272h-96v183.9c0 11.5 11.6 19.4 22.4 15.6l104-36.4zM384 272V128H128v144H32V128C32 83.8 67.8 48 112 48H400c44.2 0 80 35.8 80 80v144H384z" />
+    ),
+  },
+  {
+    id: "lesson2",
+    label: "Atributos",
+    to: "/attributes",
+    icon: (
+      <path d="M64 144a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM0 240a32 32 0 1 1 64 0 32 32 0 1 1-64 0zM96 384a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 448a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM448 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32s14.3-32 32-32H448zM448 256c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32s14.3-32 32-32H448zM448 448c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32s14.3-32 32-32H448z" />
+    ),
+  },
+  {
+    id: "lesson3",
+    label: "Filas y Columnas",
+    to: "/filas-columnas",
+    icon: (
+      <path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm96 64v64H256V160H96zm160 0v64H448V160H256zM96 288v64H256V288H96zm160 0v64H448V288H256zM96 416v64H256V416H96zm160 0v64H448V416H256z" />
+    ),
+  },
+  {
+    id: "lesson4",
+    label: "Celdas Combinadas",
+    to: "/combinar-celda",
+    icon: (
+      <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM224 384V160H416v224H224zM96 160v224H192V160H96z" />
+    ),
+  },
+  {
+    id: "practice",
+    label: "Retos",
+    to: "/reto",
+    icon: (
+      <path d="M80.2 70.8C86.5 66.6 94.5 67.5 100 72.9L128 96.5V64c0-35.3 28.7-64 64-64s64 28.7 64 64V96.5l28-23.6c5.5-5.4 13.5-6.3 19.8-2.1C309.1 76.2 320 94 320 112.6V176h16c44.2 0 80 35.8 80 80v16c0 53-43 96-96 96H320v48c0 17.7-14.3 32-32 32H192c-17.7 0-32-14.3-32-32V368H96c-53 0-96-43-96-96V256c0-44.2 35.8-80 80-80h16V112.6c0-18.6 10.9-36.4 27.8-41.8zM144 448V384H368v64H144z" />
+    ),
+  },
+]
 
 export const Sidebar = () => {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
+  const navigate = useNavigate()
+
   return (
+    <aside
+      className={`bg-azul min-h-screen shrink-0 flex flex-col items-start py-6 transition-[width,padding] duration-300 ease-in-out ${
+        open ? "w-max px-4 gap-4" : "w-12 px-3 gap-6 overflow-hidden"
+      }`}
+    >
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        aria-label={open ? "Cerrar men?" : "Abrir men?"}
+        aria-expanded={open}
+        className="text-blanco hover:text-black transition-colors"
+      >
+        <SidebarIcon>
+          <path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64s-28.7 64-64 64H64c-35.3 0-64-28.7-64-64s28.7-64 64-64zm0 160c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64s-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm0 160c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64s-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z" />
+        </SidebarIcon>
+      </button>
 
-    /* components*/
-
-       <aside className={`bg-azul h-min-screen ${open ? "w-48" : "w-12"} flex flex-col items-start transition-all duration-80 py-6 px-3 gap-6 overflow-hidden`}>
-
-            {/*Icono de Menú */}
-            <button onClick={() => setOpen(!open)}>
-            <div>
-            <svg className="w-6 h-6 fill-blanco hover:fill-black "
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 640 640"><path d="M104 112C90.7 112 80 122.7 80 136L80 184C80 197.3 90.7 208 104 208L152 208C165.3 208 176 197.3 176 184L176 136C176 122.7 165.3 112 152 112L104 112zM256 128C238.3 128 224 142.3 224 160C224 177.7 238.3 192 256 192L544 192C561.7 192 576 177.7 576 160C576 142.3 561.7 128 544 128L256 128zM256 288C238.3 288 224 302.3 224 320C224 337.7 238.3 352 256 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L256 288zM256 448C238.3 448 224 462.3 224 480C224 497.7 238.3 512 256 512L544 512C561.7 512 576 497.7 576 480C576 462.3 561.7 448 544 448L256 448zM80 296L80 344C80 357.3 90.7 368 104 368L152 368C165.3 368 176 357.3 176 344L176 296C176 282.7 165.3 272 152 272L104 272C90.7 272 80 282.7 80 296zM104 432C90.7 432 80 442.7 80 456L80 504C80 517.3 90.7 528 104 528L152 528C165.3 528 176 517.3 176 504L176 456C176 442.7 165.3 432 152 432L104 432z"/></svg>
-            </div>
-            </button>
-            {/*Opciones del Sidebar */}
-
-            {/*Icono lección 1 */}
-            <div className="group flex flex-center items-center gap-2 hover:bg-guinda rounded-lg py-2">
-                <svg className="w-6 h-6 fill-iconos/60 group-hover:fill-blanco" 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 640 640"><path d="M352 224L352 320L480 320L480 224L352 224zM288 224L160 224L160 320L288 320L288 224zM96 384L96 160C96 124.7 124.7 96 160 96L480 96C515.3 96 544 124.7 544 160L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 384zM480 384L352 384L352 480L480 480L480 384zM288 480L288 384L160 384L160 480L288 480z"/></svg>
-                {/*Texto lección 1 */}
-                {open && <span className="text-iconos/60 group-hover:text-blanco">Estructura básica</span>}
-            </div>
-
-            {/*Icono lección 2 */}
-            <div className="group flex flex-center items-center gap-2 hover:bg-guinda rounded-lg py-2">
-                <svg className="w-6 h-6 fill-iconos/60 group-hover:fill-blanco" 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 640 640"><path d="M96 160C96 124.7 124.7 96 160 96L480 96C515.3 96 544 124.7 544 160L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 160zM160 160L160 224L224 224L224 160L160 160zM480 160L288 160L288 224L480 224L480 160zM160 288L160 352L224 352L224 288L160 288zM480 288L288 288L288 352L480 352L480 288zM160 416L160 480L224 480L224 416L160 416zM480 416L288 416L288 480L480 480L480 416z"/></svg>
-                {/*Texto lección 2 */}
-                {open && <span className="text-iconos/60 group-hover:text-blanco">Atributos</span>}
-            </div>
-
-            {/*Icono lección 3 */}
-            <div className="group flex flex-center items-center gap-2 hover:bg-guinda rounded-lg py-2">
-                <svg className="w-6 h-6 fill-iconos/60 group-hover:fill-blanco" 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 640 640"><path d="M439.4 96L448 96C483.3 96 512 124.7 512 160L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 160C128 124.7 156.7 96 192 96L200.6 96C211.6 76.9 232.3 64 256 64L384 64C407.7 64 428.4 76.9 439.4 96zM376 176C389.3 176 400 165.3 400 152C400 138.7 389.3 128 376 128L264 128C250.7 128 240 138.7 240 152C240 165.3 250.7 176 264 176L376 176zM256 320C256 302.3 241.7 288 224 288C206.3 288 192 302.3 192 320C192 337.7 206.3 352 224 352C241.7 352 256 337.7 256 320zM288 320C288 333.3 298.7 344 312 344L424 344C437.3 344 448 333.3 448 320C448 306.7 437.3 296 424 296L312 296C298.7 296 288 306.7 288 320zM288 448C288 461.3 298.7 472 312 472L424 472C437.3 472 448 461.3 448 448C448 434.7 437.3 424 424 424L312 424C298.7 424 288 434.7 288 448zM224 480C241.7 480 256 465.7 256 448C256 430.3 241.7 416 224 416C206.3 416 192 430.3 192 448C192 465.7 206.3 480 224 480z"/></svg>
-                {/*Texto lección 3 */}
-                {open && <span className="text-iconos/60 group-hover:text-blanco">Formas</span>}
-            </div>
-
-            {/*Icono lección 4 */}
-            <div className="group flex flex-center items-center gap-2 hover:bg-guinda rounded-lg py-2">
-                <svg className="w-6 h-6 fill-iconos/60 group-hover:fill-blanco" 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 640 640"><path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM224 176C250.5 176 272 197.5 272 224C272 250.5 250.5 272 224 272C197.5 272 176 250.5 176 224C176 197.5 197.5 176 224 176zM368 288C376.4 288 384.1 292.4 388.5 299.5L476.5 443.5C481 450.9 481.2 460.2 477 467.8C472.8 475.4 464.7 480 456 480L184 480C175.1 480 166.8 475 162.7 467.1C158.6 459.2 159.2 449.6 164.3 442.3L220.3 362.3C224.8 355.9 232.1 352.1 240 352.1C247.9 352.1 255.2 355.9 259.7 362.3L286.1 400.1L347.5 299.6C351.9 292.5 359.6 288.1 368 288.1z"/></svg>
-                {/*Texto lección 4 */}
-                {open && <span className="text-iconos/60 group-hover:text-blanco">Celdas Extendidas</span>}
-            </div>
-
-            {/*Icono lección 5 */}
-            <div className="group flex flex-center items-center gap-2 hover:bg-guinda rounded-lg py-2">
-                <svg className="w-6 h-6 fill-iconos/60 group-hover:fill-blanco" 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 640 640"><path d="M96 128C60.7 128 32 156.7 32 192L32 448C32 483.3 60.7 512 96 512L544 512C579.3 512 608 483.3 608 448L608 192C608 156.7 579.3 128 544 128L96 128zM112 192L144 192C152.8 192 160 199.2 160 208L160 240C160 248.8 152.8 256 144 256L112 256C103.2 256 96 248.8 96 240L96 208C96 199.2 103.2 192 112 192zM96 304C96 295.2 103.2 288 112 288L144 288C152.8 288 160 295.2 160 304L160 336C160 344.8 152.8 352 144 352L112 352C103.2 352 96 344.8 96 336L96 304zM208 192L240 192C248.8 192 256 199.2 256 208L256 240C256 248.8 248.8 256 240 256L208 256C199.2 256 192 248.8 192 240L192 208C192 199.2 199.2 192 208 192zM192 304C192 295.2 199.2 288 208 288L240 288C248.8 288 256 295.2 256 304L256 336C256 344.8 248.8 352 240 352L208 352C199.2 352 192 344.8 192 336L192 304zM208 384L432 384C440.8 384 448 391.2 448 400L448 432C448 440.8 440.8 448 432 448L208 448C199.2 448 192 440.8 192 432L192 400C192 391.2 199.2 384 208 384zM288 208C288 199.2 295.2 192 304 192L336 192C344.8 192 352 199.2 352 208L352 240C352 248.8 344.8 256 336 256L304 256C295.2 256 288 248.8 288 240L288 208zM304 288L336 288C344.8 288 352 295.2 352 304L352 336C352 344.8 344.8 352 336 352L304 352C295.2 352 288 344.8 288 336L288 304C288 295.2 295.2 288 304 288zM384 208C384 199.2 391.2 192 400 192L432 192C440.8 192 448 199.2 448 208L448 240C448 248.8 440.8 256 432 256L400 256C391.2 256 384 248.8 384 240L384 208zM400 288L432 288C440.8 288 448 295.2 448 304L448 336C448 344.8 440.8 352 432 352L400 352C391.2 352 384 344.8 384 336L384 304C384 295.2 391.2 288 400 288zM480 208C480 199.2 487.2 192 496 192L528 192C536.8 192 544 199.2 544 208L544 240C544 248.8 536.8 256 528 256L496 256C487.2 256 480 248.8 480 240L480 208zM496 288L528 288C536.8 288 544 295.2 544 304L544 336C544 344.8 536.8 352 528 352L496 352C487.2 352 480 344.8 480 336L480 304C480 295.2 487.2 288 496 288z"/></svg>
-                {/*Texto lección 5 */}
-                {open && <span className="text-iconos/60 group-hover:text-blanco">Práctica</span>}
-            </div>
-
-
-
-        </aside>
-
-
-  );
-};
+      {sections.map((section) => (
+        <button
+          key={section.id}
+          type="button"
+          onClick={() => navigate(section.to)}
+          title={section.label}
+          className="group flex w-full min-w-0 items-center gap-2 rounded-lg py-2 px-1 transition-colors cursor-pointer hover:bg-guinda text-iconos/60 hover:text-blanco"
+        >
+          <SidebarIcon className="group-hover:text-blanco">{section.icon}</SidebarIcon>
+          {open && (
+            <span className="text-left text-sm leading-snug whitespace-nowrap pr-1">
+              {section.label}
+            </span>
+          )}
+        </button>
+      ))}
+    </aside>
+  )
+}

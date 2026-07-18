@@ -1,19 +1,17 @@
 import { Sidebar } from "../../../components/Sidebar"
 import { Header } from "../../../components/Header"
-import { useNavigate } from "react-router-dom"
+import LessonNavRow from "../../../components/LessonNavRow"
 
 export default function Width() {
-  const navigate = useNavigate()
-
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-800">
       <Header />
 
-      <div className="flex flex-1">
+      <div className="flex flex-1 min-w-0">
         <Sidebar />
 
-        <main className="flex-1 bg-grisbg flex flex-col p-10">
-          <div className="content-container flex flex-col flex-1">
+        <main className="flex-1 min-w-0 bg-grisbg flex flex-col p-4 sm:p-6 md:p-10 overflow-x-hidden">
+          <div className="content-container flex flex-col flex-1 min-w-0">
             <h1 className="text-4xl font-extrabold text-azul text-center mb-8">
               width
             </h1>
@@ -116,17 +114,10 @@ export default function Width() {
                   </div>
                 </div>
               </div>
-
-              <div className="flex justify-end mt-auto pt-6">
-                <button
-                  onClick={() => navigate("/attributes")}
-                  className="bg-guinda hover:bg-azul text-blanco font-bold py-2 px-8 rounded-md text-lg shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-all active:translate-y-1 active:shadow-none"
-                >
-                  Regresar al Menú
-                </button>
-              </div>
             </div>
           </div>
+
+          <LessonNavRow backTo="/attributes" />
         </main>
       </div>
     </div>

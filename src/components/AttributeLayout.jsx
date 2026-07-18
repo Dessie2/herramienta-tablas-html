@@ -1,6 +1,6 @@
 import { Sidebar } from "./Sidebar"
 import { Header } from "./Header"
-import { useNavigate } from "react-router-dom"
+import LessonNavRow from "./LessonNavRow"
 
 /**
  * Layout compartido para las vistas de "Atributos" (lección 2).
@@ -17,20 +17,18 @@ export default function AttributeLayout({
   videoNote,
   backTo = "/attributes",
 }) {
-  const navigate = useNavigate()
-
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-800">
       {/* Header */}
       <Header />
 
-      <div className="flex flex-1">
+      <div className="flex flex-1 min-w-0">
         {/* Sidebar */}
         <Sidebar />
 
         {/* Contenido principal */}
-        <main className="flex-1 bg-grisbg flex flex-col p-10">
-          <div className="content-container flex flex-col flex-1">
+        <main className="flex-1 min-w-0 bg-grisbg flex flex-col p-4 sm:p-6 md:p-10 overflow-x-hidden">
+          <div className="content-container flex flex-col flex-1 min-w-0">
             {/* Título Principal */}
             <h1 className="text-4xl mt-4 font-extrabold text-azul text-center mb-10">
               &lt;{tagLabel}&gt;
@@ -87,18 +85,10 @@ export default function AttributeLayout({
                   </div>
                 </div>
               </div>
-
-              {/* Botón Regresar al menú */}
-              <div className="flex justify-end mt-auto pt-6">
-                <button
-                  onClick={() => navigate(backTo)}
-                  className="bg-guinda hover:bg-azul text-blanco font-bold py-2 px-8 rounded-md text-lg shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-all active:translate-y-1 active:shadow-none"
-                >
-                  Regresar al menú
-                </button>
-              </div>
             </div>
           </div>
+
+          <LessonNavRow backTo={backTo} />
         </main>
       </div>
     </div>

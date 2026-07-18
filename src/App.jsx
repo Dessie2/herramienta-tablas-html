@@ -10,7 +10,7 @@ import TR_more from "./lessons/lesson1/TR_more"
 import TD_more from "./lessons/lesson1/TD_more"
 import Caption_more from "./lessons/lesson1/Caption_more"
 import TFoot_more from "./lessons/lesson1/TFoot_more"
-import QuizPage from "./pages/QuizPage"
+import QuizL1Page from "./pages/QuizL1Page"
 import Attributes from "./pages/attributes"
 import Width from "./lessons/lesson2/relAspc/Width"
 import Border from "./lessons/lesson2/relAspc/Border"
@@ -25,6 +25,12 @@ import Title from "./lessons/lesson2/global/Title"
 import Bgcolor from "./lessons/lesson2/estilo/Bgcolor"
 import Background from "./lessons/lesson2/estilo/Background"
 import Bordercolor from "./lessons/lesson2/estilo/Bordercolor"
+import QuizL2Page from "./pages/QuizL2Page"
+import QuizL3Page from "./pages/QuizL3Page"
+import FilasColumas from "./pages/FilasColumas"
+import CombinarCelda from "./pages/CombinarCelda"
+import QuizL4Page from "./pages/QuizL4Page"
+import Reto from "./pages/Reto"
 
 
 
@@ -43,7 +49,7 @@ function App() {
         <Route path="/lessons/lesson1/TD_more" element={<TD_more />} />
         <Route path="/lessons/lesson1/Caption_more" element={<Caption_more />} />
         <Route path="/lessons/lesson1/TFoot_more" element={<TFoot_more />} />
-        <Route path="/quiz" element={<QuizPage/>}/>
+        <Route path="/quiz" element={<QuizL1Page/>}/>
         <Route path="/attributes" element={<Attributes />} />
         <Route path="/lessons/lesson2/relAspc/width" element={<Width />} />
         <Route path="/lessons/lesson2/relAspc/border" element={<Border />} />
@@ -58,6 +64,12 @@ function App() {
         <Route path="/lessons/lesson2/estilo/bgcolor" element={<Bgcolor />} />
         <Route path="/lessons/lesson2/estilo/background" element={<Background />} />
         <Route path="/lessons/lesson2/estilo/bordercolor" element={<Bordercolor />} />
+        <Route path="/quiz2" element={<QuizL2Page/>}/>
+        <Route path="/filas-columnas" element={<FilasColumas />} />
+        <Route path="/quiz3" element={<QuizL3Page/>}/>
+        <Route path="/combinar-celda" element={<CombinarCelda />} />
+        <Route path="/quiz4" element={<QuizL4Page />} />
+        <Route path="/reto" element={<Reto />} />
 
       </Routes>
     </BrowserRouter>

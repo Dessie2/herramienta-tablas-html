@@ -1,7 +1,8 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Sidebar } from "../components/Sidebar"
 import { Header } from "../components/Header"
-import { useNavigate } from "react-router-dom"
+import LessonNavRow from "../components/LessonNavRow"
 
 const categories = [
   { id: "relation", label: "Atributos Relación-Aspecto" },
@@ -165,7 +166,7 @@ function TableDiagram() {
 
 function CodeBlock({ tableAttrs, attributeName }) {
   const highlightAttr = (line) => {
-    if (!line.includes(attributeName)) return line
+    if (!attributeName || !line.includes(attributeName)) return line
 
     const parts = line.split(new RegExp(`(${attributeName})`))
     return parts.map((part, i) =>
@@ -206,58 +207,66 @@ function CodeBlock({ tableAttrs, attributeName }) {
 export default function Attributes() {
   const navigate = useNavigate()
   const [activeCategory, setActiveCategory] = useState("relation")
-  const [activeIndex, setActiveIndex] = useState(2)
+  const [activeIndex, setActiveIndex] = useState(null)
 
   const attributes = attributesByCategory[activeCategory]
-  const current = attributes[activeIndex]
+  const current = activeIndex !== null ? attributes[activeIndex] : null
 
   const selectAttribute = (index) => setActiveIndex(index)
 
   const prevAttribute = () => {
-    setActiveIndex((i) => (i === 0 ? attributes.length - 1 : i - 1))
+    setActiveIndex((i) => {
+      if (i === null) return attributes.length - 1
+      return i === 0 ? attributes.length - 1 : i - 1
+    })
   }
 
   const nextAttribute = () => {
-    setActiveIndex((i) => (i === attributes.length - 1 ? 0 : i + 1))
+    setActiveIndex((i) => {
+      if (i === null) return 0
+      return i === attributes.length - 1 ? 0 : i + 1
+    })
   }
 
   const changeCategory = (id) => {
     setActiveCategory(id)
-    setActiveIndex(0)
+    setActiveIndex(null)
   }
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-slate-800">
+    <div className="min-h-screen flex flex-col font-sans text-slate-800 overflow-x-hidden">
       <Header />
 
-      <div className="flex flex-1">
+      <div className="flex flex-1 min-w-0">
         <Sidebar />
 
-        <main className="flex-1 bg-grisbg py-8 flex flex-col">
-          <div className="w-full max-w-[1200px] mx-auto px-6 flex flex-col flex-1">
-            <h1 className="text-3xl font-bold text-azul text-center mb-4">
+        <main className="flex-1 min-w-0 bg-grisbg py-4 sm:py-8 px-4 sm:px-6 flex flex-col overflow-x-hidden">
+          <div className="content-container flex flex-col flex-1 min-w-0">
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-azul text-center mb-6">
               Atributos de la tabla
             </h1>
 
-            <p className="text-center text-gray-700 mb-8 leading-relaxed">
-              Las tablas pueden tener diferentes{" "}
-              <span className="text-amarillo font-semibold">atributos</span>{" "}
-              para mejorar su estilización, tales como colores, formas,
-              contenido y distribución. Aunque la mayoría están obsoletas
-              por la estandarización de HTML5 y el uso de CSS, siguen
-              sirviendo de auxiliares y son menos complejas.
-            </p>
+            <div className="bg-white/80 border-l-4 border-amarillo rounded-r-xl shadow-sm p-5 sm:p-6 text-base sm:text-lg leading-relaxed mb-8 max-w-3xl mx-auto w-full">
+              <p className="text-center text-gray-700">
+                Las tablas pueden tener diferentes{" "}
+                <span className="text-amarillo font-semibold">atributos</span>{" "}
+                para mejorar su estilización, tales como colores, formas,
+                contenido y distribución. Aunque la mayoría están obsoletas
+                por la estandarización de HTML5 y el uso de CSS, siguen
+                sirviendo de auxiliares y son menos complejas.
+              </p>
+            </div>
 
             {/* Pestañas de categoría */}
-            <div className="flex gap-4 mb-14 w-full">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-6 sm:mb-10 w-full min-w-0">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => changeCategory(cat.id)}
-                  className={`flex-1 py-2.5 rounded-lg font-medium text-white text-sm transition-colors ${
+                  className={`flex-1 py-3 rounded-xl font-bold text-white text-xs sm:text-sm transition-all ${
                     activeCategory === cat.id
-                      ? "bg-guinda hover:bg-guinda/90"
-                      : "bg-azul hover:bg-azul/90"
+                      ? "bg-guinda shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:bg-guinda/90"
+                      : "bg-azul shadow-md hover:bg-azul/90 hover:-translate-y-0.5 active:translate-y-0.5"
                   }`}
                 >
                   {cat.label}
@@ -265,43 +274,47 @@ export default function Attributes() {
               ))}
             </div>
 
+            <p className="text-center text-sm font-semibold text-azul/70 mb-4 tracking-wide uppercase">
+              Explora cada atributo con el selector de abajo
+            </p>
+
             {/* Contenido principal: código + descripción */}
-            <div className="grid grid-cols-1 md:grid-cols-[3fr_1.15fr] gap-5 items-start w-full">
+            <div className="grid grid-cols-1 md:grid-cols-[3fr_1.15fr] gap-8 lg:gap-14 xl:gap-20 items-start w-full animate-fade-up">
               <div className="flex flex-col">
-                <div className="bg-griscroll rounded-xl p-5 relative min-h-[300px] overflow-hidden">
-                  <div className="max-w-[52%]">
+                <div className="bg-griscroll rounded-xl p-4 sm:p-5 relative min-h-[300px] overflow-hidden border-2 border-azul/10 shadow-[6px_6px_0px_rgba(0,0,0,0.12)]">
+                  <div className="max-w-full md:max-w-[52%]">
                     <CodeBlock
-                      tableAttrs={current.tableAttrs}
-                      attributeName={current.name}
+                      tableAttrs={current?.tableAttrs ?? 'border="1"'}
+                      attributeName={current?.name ?? null}
                     />
                   </div>
 
-                  {current.showDiagram && (
-                    <div className="absolute right-8 top-1/2 -translate-y-1/2">
+                  {current?.showDiagram && (
+                    <div className="hidden md:block absolute right-4 lg:right-8 top-1/2 -translate-y-1/2">
                       <TableDiagram />
                     </div>
                   )}
                 </div>
 
-                {/* Selector de atributos centrado bajo el bloque de código */}
-                <div className="flex justify-center items-center gap-2 mt-6">
+                {/* Selector de atributos */}
+                <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mt-8 min-w-0">
                   <button
                     onClick={prevAttribute}
                     aria-label="Atributo anterior"
-                    className="text-azul hover:text-guinda text-2xl font-bold px-1 transition-colors leading-none"
+                    className="w-9 h-9 rounded-full bg-azul text-white font-bold shadow-md hover:bg-guinda transition-colors flex items-center justify-center shrink-0"
                   >
                     &#8249;
                   </button>
 
-                  <div className="flex gap-2 justify-center">
+                  <div className="flex flex-wrap gap-3 sm:gap-4 justify-center min-w-0">
                     {attributes.map((attr, index) => (
                       <button
                         key={attr.id}
                         onClick={() => selectAttribute(index)}
-                        className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all min-w-[90px] ${
+                        className={`px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm font-bold font-mono transition-all min-w-0 sm:min-w-[90px] ${
                           activeIndex === index
-                            ? "bg-[#D1F0E0] border-2 border-[#5cb88a] text-slate-800"
-                            : "bg-[#D6E8F5] border border-[#b8d4ea] text-slate-700 hover:bg-[#c5dff0]"
+                            ? "bg-[#D1F0E0] border-2 border-[#5cb88a] text-slate-800 shadow-md scale-105"
+                            : "bg-white border-2 border-[#b8d4ea] text-slate-700 hover:bg-[#D6E8F5] hover:border-azul hover:-translate-y-0.5 shadow-sm"
                         }`}
                       >
                         {attr.name}
@@ -312,47 +325,55 @@ export default function Attributes() {
                   <button
                     onClick={nextAttribute}
                     aria-label="Atributo siguiente"
-                    className="text-azul hover:text-guinda text-2xl font-bold px-1 transition-colors leading-none"
+                    className="w-9 h-9 rounded-full bg-azul text-white font-bold shadow-md hover:bg-guinda transition-colors flex items-center justify-center shrink-0"
                   >
                     &#8250;
                   </button>
                 </div>
               </div>
 
-              <div className="pt-16 pl-20">
-                <p className="text-gray-700 text-sm leading-relaxed mb-7">
-                  {current.description.split(current.name).map((part, i, arr) =>
-                    i < arr.length - 1 ? (
-                      <span key={i}>
-                        {part}
-                        <span className="font-semibold text-amarillo">{current.name}</span>
-                      </span>
-                    ) : (
-                      <span key={i}>{part}</span>
-                    )
-                  )}
-                </p>
-              <button 
-                onClick={() => {
-                  const folderName = categoryUrlMapping[activeCategory] || activeCategory;
-                  navigate(`/lessons/lesson2/${folderName}/${current.id}`);
-                }}
-                className="bg-azul text-white px-5 py-1.5 rounded-lg text-sm hover:bg-guinda transition-colors"
-              >
-                Ver más
-              </button>
+              <div className="bg-white/80 border-l-4 border-amarillo rounded-r-xl shadow-sm p-6 sm:p-8 md:p-10 flex flex-col items-center text-center gap-8 lg:gap-10 md:mt-12 lg:mt-16 w-full">
+                {current ? (
+                  <>
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed max-w-xs">
+                      {current.description.split(current.name).map((part, i, arr) =>
+                        i < arr.length - 1 ? (
+                          <span key={i}>
+                            {part}
+                            <span className="font-semibold text-amarillo">{current.name}</span>
+                          </span>
+                        ) : (
+                          <span key={i}>{part}</span>
+                        )
+                      )}
+                    </p>
+                    <button
+                      onClick={() => {
+                        const folderName = categoryUrlMapping[activeCategory] || activeCategory
+                        navigate(`/lessons/lesson2/${folderName}/${current.id}`)
+                      }}
+                      className="bg-azul text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-[3px_3px_0px_rgba(0,0,0,0.2)] hover:bg-guinda active:translate-y-0.5 active:shadow-none transition-all"
+                    >
+                      Ver más
+                    </button>
+                  </>
+                ) : (
+                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-xs italic">
+                    Selecciona un atributo para ver su descripción y ejemplo de código.
+                  </p>
+                )}
               </div>
             </div>
-
-            <div className="flex justify-end mt-auto pt-10">
-              <button
-                onClick={() => navigate("/lessons/lesson1/Table_more")}
-                className="bg-guinda text-white px-6 py-2 rounded-lg font-medium hover:bg-guinda/90 transition-colors"
-              >
-                Siguiente Lección
-              </button>
-            </div>
           </div>
+
+          <LessonNavRow>
+            <button
+              onClick={() => navigate("/quiz2")}
+              className="lesson-nav-btn bg-guinda text-white shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:bg-guinda/90 active:translate-y-0.5 active:shadow-none transition-all"
+            >
+              Siguiente Lección
+            </button>
+          </LessonNavRow>
         </main>
       </div>
     </div>

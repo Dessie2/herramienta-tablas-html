@@ -1,20 +1,19 @@
 import { Sidebar } from "../../components/Sidebar"
 import { Header } from "../../components/Header"
-import { useNavigate } from 'react-router-dom';
+import LessonNavRow from "../../components/LessonNavRow"
 import tabla from "../../assets/images/leccion_1/table_border.svg";
 
 export default function Table_more(){
-  const navigate = useNavigate()
     return(
         <div>
         {/*Header*/}
         <Header/>
 
         {/*Sidebar*/}
-        <div className="flex flex-1">
+        <div className="flex flex-1 min-w-0">
         <Sidebar/>
          {/*Contenido principal*/}
-          <main className="flex-1 bg-grisbg p-10">
+          <main className="flex-1 min-w-0 bg-grisbg p-4 sm:p-6 md:p-10 flex flex-col overflow-x-hidden">
             <div className="content-container flex flex-col">
             {/* Título Principal */}
           <h1 className="text-4xl mt-4 font-extrabold text-azul text-center mb-10">
@@ -63,14 +62,10 @@ export default function Table_more(){
 
             </div>
 
+            </div>
+
         {/*Boton inicio */}
-            <div className="mt-[50px] mb-2 flex justify-end">
-            <button  onClick={() => navigate("/concepts")} 
-            className="bg-azul text-blanco px-6 py-2 rounded-lg font-bold text-sm shadow-md hover:bg-guinda transition-colors">
-                Volver al menú
-            </button>
-            </div>
-            </div>
+            <LessonNavRow backTo="/concepts" />
 
            </main>
 

@@ -2,8 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html,
+  body {
+    @apply overflow-x-hidden;
+  }
+}
+
 @layer components {
   .content-container {
-    @apply max-w-[1200px] mx-auto w-full;
+    @apply max-w-[1200px] mx-auto w-full min-w-0;
+  }
+
+  .lesson-nav-row {
+    @apply flex w-full min-w-0 max-w-full justify-between items-center mt-auto pt-4 sm:pt-6 shrink-0;
+  }
+
+  .lesson-nav-btn {
+    @apply px-3 py-2 sm:px-6 rounded-lg font-bold text-xs sm:text-sm transition-colors max-w-full shrink-0;
   }
 }
