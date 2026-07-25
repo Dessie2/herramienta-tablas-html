@@ -65,7 +65,6 @@ export default function Bordercolor() {
         { label: "Sin bordercolor", table: sinBordercolor },
         { label: 'Con bordercolor="#D19800"', table: conBordercolor },
       ]}
-      videoNote="Espacio reservado para el video: efecto de bordercolor combinado con border."
     />
   )
 }

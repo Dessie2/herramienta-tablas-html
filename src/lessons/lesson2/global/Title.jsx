@@ -67,7 +67,6 @@ export default function Title() {
           table: conTitle,
         },
       ]}
-      videoNote="Espacio reservado para el video: cómo se muestra el tooltip del atributo title."
     />
   )
 }

@@ -57,7 +57,6 @@ export default function Cellspacing() {
         { label: "Sin cellspacing", table: sinCellspacing },
         { label: 'Con cellspacing="10"', table: conCellspacing },
       ]}
-      videoNote="Espacio reservado para el video: diferencia entre cellpadding y cellspacing."
     />
   )
 }

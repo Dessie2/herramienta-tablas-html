@@ -64,7 +64,6 @@ export default function Style() {
         { label: "Tabla sin style", table: sinStyle },
         { label: "Tabla con style en línea", table: conStyle },
       ]}
-      videoNote="Espacio reservado para el video: diferencias entre style en línea y CSS externo."
     />
   )
 }

@@ -70,7 +70,6 @@ export default function Background() {
         { label: "Sin background", table: sinBackground },
         { label: "Con background (imagen simulada)", table: conBackground },
       ]}
-      videoNote="Espacio reservado para el video: aplicar una imagen de fondo con background."
     />
   )
 }

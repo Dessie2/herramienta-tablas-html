@@ -69,7 +69,6 @@ export default function Border() {
         { label: "Sin border", table: sinBorder },
         { label: 'Con border="1"', table: conBorder },
       ]}
-      videoNote="Espacio reservado para el video: creación de una tabla y el efecto del atributo border."
     />
   )
 }

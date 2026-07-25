@@ -79,7 +79,6 @@ export default function Id() {
           table: conId,
         },
       ]}
-      videoNote="Espacio reservado para el video: cómo usar id como selector en CSS."
     />
   )
 }

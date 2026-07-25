@@ -56,7 +56,6 @@ export default function Cellpadding() {
         { label: "Sin cellpadding", table: sinCellpadding },
         { label: 'Con cellpadding="15"', table: conCellpadding },
       ]}
-      videoNote="Espacio reservado para el video: efecto de cellpadding en el espacio interno de las celdas."
     />
   )
 }

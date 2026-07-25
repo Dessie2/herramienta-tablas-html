@@ -18,12 +18,17 @@ export default {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' }
+        },
+        blink: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)', boxShadow: '3px 3px 0px rgba(0,0,0,0.2), 0 0 0 0 rgba(209,152,0,0.6)' },
+          '50%': { opacity: '0.75', transform: 'scale(1.05)', boxShadow: '3px 3px 0px rgba(0,0,0,0.2), 0 0 14px 4px rgba(209,152,0,0.75)' },
         }
       },
       animation: {
         pop: 'pop .4s ease',
         'fade-up': 'fade-up .5s ease both',
         wiggle: 'wiggle 2s ease-in-out infinite',
+        blink: 'blink 1.4s ease-in-out infinite',
       },
       /*Arreglo de colores variables */
       colors:{

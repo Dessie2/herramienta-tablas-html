@@ -76,7 +76,6 @@ export default function Align() {
         { label: 'align="center"', table: alignCenter },
         { label: 'align="right"', table: alignRight },
       ]}
-      videoNote="Espacio reservado para el video: las tres alineaciones posibles con align."
     />
   )
 }

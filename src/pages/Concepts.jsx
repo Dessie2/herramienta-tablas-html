@@ -1,20 +1,23 @@
+import { useState } from "react"
 import { Sidebar } from "../components/Sidebar"
 import { Header } from "../components/Header"
 import { useNavigate } from "react-router-dom"
+import tableL1 from "../assets/images/leccion_1/tableL1.svg"
 
 const tags = [
   { name: "<table>", gradient: "from-cyan-100 to-sky-50", border: "border-cyan-300", icon: "▦" },
-  { name: "<th>", gradient: "from-emerald-100 to-green-50", border: "border-emerald-300", icon: "◆" },
+  { name: "<caption>", gradient: "from-emerald-100 to-green-50", border: "border-emerald-300", icon: "✦" },
   { name: "<thead>", gradient: "from-cyan-100 to-sky-50", border: "border-cyan-300", icon: "▤" },
   { name: "<tbody>", gradient: "from-emerald-100 to-green-50", border: "border-emerald-300", icon: "▥" },
+  { name: "<tfoot>", gradient: "from-cyan-100 to-sky-50", border: "border-cyan-300", icon: "▧" },
+  { name: "<th>", gradient: "from-emerald-100 to-green-50", border: "border-emerald-300", icon: "◆" },
   { name: "<tr>", gradient: "from-emerald-100 to-green-50", border: "border-emerald-300", icon: "▬" },
   { name: "<td>", gradient: "from-cyan-100 to-sky-50", border: "border-cyan-300", icon: "▪" },
-  { name: "<caption>", gradient: "from-emerald-100 to-green-50", border: "border-emerald-300", icon: "✦" },
-  { name: "<tfoot>", gradient: "from-cyan-100 to-sky-50", border: "border-cyan-300", icon: "▧" },
 ]
 
 export default function Concepts() {
   const navigate = useNavigate()
+  const [showExample, setShowExample] = useState(false)
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-800 overflow-x-hidden">
@@ -33,27 +36,34 @@ export default function Concepts() {
             {/* Texto Descriptivo */}
             <div className="bg-white/80 border-l-4 border-amarillo rounded-r-xl shadow-sm p-5 sm:p-6 text-lg leading-relaxed mb-6">
               <p className="mb-4">
-                En este tema vamos a ver cómo trabajar con tablas dentro de una página web. Podemos insertar 
-                <span className="text-amarillo font-semibold"> tablas, filas y columnas</span>, y modificar sus 
+                En este tema vamos a ver cómo trabajar con tablas dentro de una página web. Podemos insertar
+                <span className="text-amarillo font-semibold"> tablas, filas y columnas</span>, y modificar sus
                 <span className="text-amarillo font-semibold"> propiedades</span> para una mejor visualización.
               </p>
               <p>
-                Las tablas están formadas por celdas, que son los recuadros que se obtienen como resultado de la 
-                intersección entre una fila y una columna. Las filas y columnas de una tabla se van formando de 
+                Las tablas están formadas por celdas, que son los recuadros que se obtienen como resultado de la
+                intersección entre una fila y una columna. Las filas y columnas de una tabla se van formando de
                 izquierda a derecha y de arriba hacia abajo respectivamente.
               </p>
             </div>
 
             {/* Botón Ejemplo */}
             <div className="flex justify-end w-full mb-4">
-              <div className="flex flex-col items-center cursor-pointer group">
-                <span className="font-bold text-azul text-sm group-hover:text-guinda transition-colors">Ejemplo</span>
-                <div className="w-10 h-10 rounded-full bg-azul text-white flex items-center justify-center shadow-[3px_3px_0px_rgba(0,0,0,0.2)] group-hover:bg-guinda transition-all">
+              <button
+                type="button"
+                onClick={() => setShowExample(true)}
+                aria-label="Ver ejemplo de estructura de tabla"
+                className="flex flex-col items-center cursor-pointer group"
+              >
+                <span className="font-bold text-azul text-sm group-hover:text-guinda transition-colors animate-blink">
+                  Ejemplo
+                </span>
+                <div className="w-10 h-10 rounded-full bg-azul text-white flex items-center justify-center shadow-[3px_3px_0px_rgba(0,0,0,0.2)] group-hover:bg-guinda transition-all animate-blink">
                   <svg className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
-              </div>
+              </button>
             </div>
 
             {/* Indicador tipo juego */}
@@ -98,7 +108,7 @@ export default function Concepts() {
 
           {/* Botón Siguiente Lección  */}
           <div className="lesson-nav-row justify-end">
-            <button 
+            <button
               onClick={() => navigate("/quiz")}
               className="lesson-nav-btn bg-azul text-white shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:bg-guinda hover:shadow-[2px_2px_0px_rgba(0,0,0,0.2)] active:translate-y-0.5 active:shadow-none transition-all"
             >
@@ -107,6 +117,41 @@ export default function Concepts() {
           </div>
         </main>
       </div>
+
+      {showExample && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-up"
+          onClick={() => setShowExample(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="example-modal-title"
+        >
+          <div
+            className="relative bg-blanco rounded-xl shadow-2xl border-2 border-azul/20 p-4 sm:p-6 max-w-4xl w-full max-h-[90vh] overflow-auto animate-pop"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between mb-4 gap-4">
+              <h2 id="example-modal-title" className="text-xl sm:text-2xl font-extrabold text-azul">
+                Ejemplo de estructura de tabla
+              </h2>
+              <button
+                type="button"
+                onClick={() => setShowExample(false)}
+                aria-label="Cerrar ventana de ejemplo"
+                className="shrink-0 w-9 h-9 rounded-full bg-azul text-blanco font-bold hover:bg-guinda transition-colors"
+              >
+                ✕
+              </button>
+            </div>
+
+            <img
+              src={tableL1}
+              alt="Diagrama de estructura de una tabla HTML con sus etiquetas"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }

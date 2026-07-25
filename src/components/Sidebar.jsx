@@ -64,7 +64,7 @@ export const Sidebar = () => {
 
   return (
     <aside
-      className={`bg-azul min-h-screen shrink-0 flex flex-col items-start py-6 transition-[width,padding] duration-300 ease-in-out ${
+      className={`bg-azul shrink-0 self-stretch flex flex-col items-start py-6 transition-[width,padding] duration-300 ease-in-out ${
         open ? "w-max px-4 gap-4" : "w-12 px-3 gap-6 overflow-hidden"
       }`}
     >

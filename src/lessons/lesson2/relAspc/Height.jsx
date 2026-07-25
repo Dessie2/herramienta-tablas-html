@@ -63,7 +63,6 @@ export default function Height() {
         { label: "Sin height", table: sinHeight },
         { label: 'Con height="150"', table: conHeight },
       ]}
-      videoNote="Espacio reservado para el video: efecto del atributo height sobre la tabla."
     />
   )
 }

@@ -40,7 +40,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/concepts" element={<Concepts />} />
-        <Route path="/lessons/lesson1/:tagName" element={<TagView />} />
         <Route path="/lessons/lesson1/Table_more" element={<Table_more />} />
         <Route path="/lessons/lesson1/TH_More" element={<TH_More />} />
         <Route path="/lessons/lesson1/Thead_more" element={<Thead_more />} />
@@ -49,6 +48,7 @@ function App() {
         <Route path="/lessons/lesson1/TD_more" element={<TD_more />} />
         <Route path="/lessons/lesson1/Caption_more" element={<Caption_more />} />
         <Route path="/lessons/lesson1/TFoot_more" element={<TFoot_more />} />
+        <Route path="/lessons/lesson1/:tagName" element={<TagView />} />
         <Route path="/quiz" element={<QuizL1Page/>}/>
         <Route path="/attributes" element={<Attributes />} />
         <Route path="/lessons/lesson2/relAspc/width" element={<Width />} />

@@ -76,7 +76,6 @@ export default function Class() {
         { label: 'class="tabla-datos"', table: conClaseA },
         { label: 'class="tabla-datos"', table: conClaseB },
       ]}
-      videoNote="Espacio reservado para el video: aplicar un mismo estilo a varias tablas con class."
     />
   )
 }

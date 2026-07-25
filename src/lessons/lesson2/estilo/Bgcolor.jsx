@@ -59,7 +59,6 @@ export default function Bgcolor() {
         { label: "Sin bgcolor", table: sinBgcolor },
         { label: 'Con bgcolor="#1B396A"', table: conBgcolor },
       ]}
-      videoNote="Espacio reservado para el video: aplicar bgcolor a toda la tabla y a una sola celda."
     />
   )
 }

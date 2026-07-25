@@ -1,107 +1,83 @@
-import { Sidebar } from "../../components/Sidebar"
-import { Header } from "../../components/Header"
-import LessonNavRow from "../../components/LessonNavRow"
+import LessonLayout from "../../components/LessonLayout"
 
-export default function TD_more() {
+export default function Caption_more() {
   return (
-    <div className="h-screen flex flex-col">
-        <div>
-        <Header/>
-        </div> 
-        <div className="flex flex-1">
-            <Sidebar/>
-            
-        <main className="bg-grisbg flex-1 min-w-0 flex flex-col p-4 sm:p-6 md:p-10 overflow-x-hidden">
-            <div className="content-container flex flex-col flex-1">
-                <h1 className="text-4xl font-extrabold text-azul text-center mb-4 -mt-16">
-                Etiqueta &lt;caption&gt;
-                </h1>
-            <div className="bg-blanco w-full h-full rounded-md flex flex-col p-10">
-                <div className="flex flex-row gap-10">
-                    <div className="ml-10 mt-10 flex flex-col text-xl p-3 gap-8 max-w-md">
-                        <h1>
-                            La etiqueta <span className="font-bold text-amarillo">&lt;caption&gt;</span> nos sirve para indicar el título de la tabla<br />
-                            Se declara comenzando con <br /> <span className="font-bold text-amarillo">&lt;caption&gt;</span> <br />
-                            Y cierra con <br /> <span className="font-bold text-amarillo">&lt;/caption&gt;</span> <br />    
-                            Funciona como el titular oficial de la tabla, situándose normalmente encima de esta para explicar el propósito de los datos presentados.
-                            Siempre y exclusivamente debe ir dentro de la etiqueta <span className="font-bold text-amarillo">&lt;table&gt;</span> como primer hijo
-                            solo puede existir una, y no es obligatorio, 
-                            pero recomendado para mejorar la accesibilidad y comprensión de la tabla.
-                        </h1>
-                    </div>
+    <LessonLayout title="Etiqueta &lt;caption&gt;" showNav>
+      <div className="lesson-content-panel bg-blanco w-full rounded-md shadow-md p-6 sm:p-10">
+        <div className="flex flex-col xl:flex-row gap-8 xl:gap-10 min-w-0">
+          <div className="flex flex-col text-base sm:text-lg lg:text-xl gap-4 w-full xl:max-w-md xl:shrink-0">
+            <p>
+              La etiqueta <span className="font-bold text-amarillo">&lt;caption&gt;</span> nos sirve para indicar el título de la tabla.
+            </p>
+            <p>
+              Se declara comenzando con <span className="font-bold text-amarillo">&lt;caption&gt;</span> y cierra con{" "}
+              <span className="font-bold text-amarillo">&lt;/caption&gt;</span>.
+            </p>
+            <p>
+              Funciona como el titular oficial de la tabla, situándose normalmente encima de esta para explicar el propósito de los datos presentados.
+              Siempre y exclusivamente debe ir dentro de la etiqueta{" "}
+              <span className="font-bold text-amarillo">&lt;table&gt;</span> como primer hijo.
+              Solo puede existir una, y no es obligatorio, pero recomendado para mejorar la accesibilidad y comprensión de la tabla.
+            </p>
+          </div>
 
-            {/* Contenedor ejemplos*/}     
-            <div className="flex flex-col gap-10 flex-1">
-            {/* Contenedor de las dos tablas*/}
-                <div className="flex flex-row gap-4">
-                <div className="p-2 flex flex-col gap-4 flex-1">
-                    <h1 className="text-center font-bold">Tabla sin caption</h1>
-                       <table>
-                            <tr>
-                                <td className="border-2">Columna 1</td>
-                                <td className="border-2">Columna 2</td>
-                                <td className="border-2">Columna 3</td>
-                            </tr>
+          <div className="flex flex-col gap-8 flex-1 min-w-0 w-full">
+            <div className="flex flex-col lg:flex-row gap-6 w-full">
+              <div className="p-2 flex flex-col gap-4 flex-1 min-w-0 overflow-x-auto">
+                <h2 className="text-center font-bold">Tabla sin caption</h2>
+                <table className="mx-auto w-full max-w-xs">
+                  <tbody>
+                    <tr>
+                      <td className="border-2 px-2 py-1 text-sm">Columna 1</td>
+                      <td className="border-2 px-2 py-1 text-sm">Columna 2</td>
+                      <td className="border-2 px-2 py-1 text-sm">Columna 3</td>
+                    </tr>
+                    <tr>
+                      <td className="border-2 px-2 py-1 text-sm">Celda 1</td>
+                      <td className="border-2 px-2 py-1 text-sm">Celda 2</td>
+                      <td className="border-2 px-2 py-1 text-sm">Celda 3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
-                            <tr>
-                                <td className="border-2">Celda 1</td>
-                                <td className="border-2">Celda 2</td>
-                                <td className="border-2">Celda 3</td>
-                            </tr>
-                        </table>
-                </div>
-
-                <div className="p-2 flex flex-col gap-4 flex-1">
-                    
-                    <h1 className="text-center font-bold">Tabla con caption</h1>
-                    <table>
-                        <caption>Ejemplo de tablas HTML</caption>
-                        <tr>
-                            <th className="border-2">Columna 1</th>
-                            <th className="border-2">Columna 2</th>
-                            <th className="border-2">Columna 3</th>
-                        </tr>      
-
-                        <tr className="bg-red-500">
-                            <td className="border-2">Celda 1(td)</td>
-                            <td className="border-2">Celda 2(td)</td>
-                            <td className="border-2">Celda 3(td)</td>
-                        </tr>
-                        <tr className="bg-red-500">
-                            <td className="border-2">Celda 1-1(td)</td>
-                            <td className="border-2">Celda 2-1(td)</td>
-                            <td className="border-2">Celda 3-1(td)</td>
-                        </tr>
-                    </table>
-                </div>
-
-                </div>
-
-            {/* Video*/}
-            <div className="flex justify-center">
-                <iframe 
-                    src="https://www.youtube.com/embed/kT6UCsMssck"
-                    className="w-full max-w-[600px] aspect-video"
-                ></iframe>
+              <div className="p-2 flex flex-col gap-4 flex-1 min-w-0 overflow-x-auto">
+                <h2 className="text-center font-bold">Tabla con caption</h2>
+                <table className="mx-auto w-full max-w-xs">
+                  <caption className="caption-bottom mb-2 text-sm font-semibold">
+                    Ejemplo de tablas HTML
+                  </caption>
+                  <tbody>
+                    <tr>
+                      <th className="border-2 px-2 py-1 text-sm">Columna 1</th>
+                      <th className="border-2 px-2 py-1 text-sm">Columna 2</th>
+                      <th className="border-2 px-2 py-1 text-sm">Columna 3</th>
+                    </tr>
+                    <tr className="bg-red-500">
+                      <td className="border-2 px-2 py-1 text-sm">Celda 1(td)</td>
+                      <td className="border-2 px-2 py-1 text-sm">Celda 2(td)</td>
+                      <td className="border-2 px-2 py-1 text-sm">Celda 3(td)</td>
+                    </tr>
+                    <tr className="bg-red-500">
+                      <td className="border-2 px-2 py-1 text-sm">Celda 1-1(td)</td>
+                      <td className="border-2 px-2 py-1 text-sm">Celda 2-1(td)</td>
+                      <td className="border-2 px-2 py-1 text-sm">Celda 3-1(td)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
+
+            <div className="flex justify-center w-full">
+              <iframe
+                src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006074/caption_njbnsw.mp4"
+                title="Video demostrativo caption"
+                className="w-full max-w-[600px] aspect-video rounded-lg"
+              />
+            </div>
+          </div>
         </div>
-
-    </div>
-                
-            </div>
-
-            </div>
-
-            {/*Boton inicio */}
-            <LessonNavRow backTo="/concepts" />
-
-            </main>
-        </div>
-
-
-        
-    </div>
+      </div>
+    </LessonLayout>
   )
 }
-
- 
