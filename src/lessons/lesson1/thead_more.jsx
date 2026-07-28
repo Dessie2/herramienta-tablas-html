@@ -1,4 +1,4 @@
-import LessonLayout from "../../components/LessonLayout"
+import LessonLayout from "../../components/lessonLayout"
 
 export default function Thead_more() {
   return (

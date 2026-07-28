@@ -1,7 +1,7 @@
-import { Sidebar } from "../components/Sidebar"
-import { Header } from "../components/Header"
-import LessonNavRow from "../components/LessonNavRow"
-import Quiz from "../components/QuizLesson4"
+import { Sidebar } from "../components/sidebar"
+import { Header } from "../components/header"
+import LessonNavRow from "../components/lessonNavRow"
+import Quiz from "../components/quizLesson4"
 
 export default function QuizL4Page() {
   return (

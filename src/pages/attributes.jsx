@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Sidebar } from "../components/Sidebar"
-import { Header } from "../components/Header"
-import LessonNavRow from "../components/LessonNavRow"
+import { Sidebar } from "../components/sidebar"
+import { Header } from "../components/header"
+import LessonNavRow from "../components/lessonNavRow"
 
 const categories = [
   { id: "relation", label: "Atributos Relación-Aspecto" },

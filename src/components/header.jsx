@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import tecnm from "../assets/images/logos/Logo_Tecnm.svg";
-import itm from "../assets/images/logos/Logo_ITM.svg";
-import mono from "../assets/images/logos/LogoHDEK_Blanc.svg";
+import tecnm from "../assets/images/logos/logo_tecnm.svg";
+import itm from "../assets/images/logos/logo_itm.svg";
+import mono from "../assets/images/logos/logohdek_blanc.svg";
 
 export const Header = () => {
   return (

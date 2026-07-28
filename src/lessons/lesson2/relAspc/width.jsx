@@ -1,4 +1,4 @@
-import AttributeLayout from "../../../components/AttributeLayout"
+import AttributeLayout from "../../../components/attributeLayout"
 
 const tableRows = (
   <>

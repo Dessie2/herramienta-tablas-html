@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { Sidebar } from "../components/Sidebar"
-import { Header } from "../components/Header"
+import { Sidebar } from "../components/sidebar"
+import { Header } from "../components/header"
 import { useNavigate } from "react-router-dom"
 import tableL1 from "../assets/images/leccion_1/tableL1.svg"
 

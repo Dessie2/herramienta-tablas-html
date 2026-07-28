@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { Sidebar } from "../components/Sidebar"
-import { Header } from "../components/Header"
-import HtmlPlayground from "../components/HtmlPlayground"
-import LessonNavRow from "../components/LessonNavRow"
-import { tableChallenges } from "../assets/Retos"
+import { Sidebar } from "../components/sidebar"
+import { Header } from "../components/header"
+import HtmlPlayground from "../components/htmlPlayground"
+import LessonNavRow from "../components/lessonNavRow"
+import { tableChallenges } from "../assets/retos"
 
 function pickRandomChallenge() {
   const index = Math.floor(Math.random() * tableChallenges.length)

@@ -1,6 +1,6 @@
-import { Sidebar } from "./Sidebar"
-import { Header } from "./Header"
-import LessonNavRow from "./LessonNavRow"
+import { Sidebar } from "./sidebar"
+import { Header } from "./header"
+import LessonNavRow from "./lessonNavRow"
 
 export default function LessonLayout({
   title,

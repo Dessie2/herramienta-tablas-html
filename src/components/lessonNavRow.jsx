@@ -1,4 +1,4 @@
-import BackButton from "./BackButton"
+import BackButton from "./backButton"
 
 export default function LessonNavRow({ backTo, children, backVariant = "default", backClassName = "" }) {
   return (

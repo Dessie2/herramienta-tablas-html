@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import LessonLayout from "../../components/LessonLayout"
+import LessonLayout from "../../components/lessonLayout"
 
 export default function Caption() {
   const navigate = useNavigate()

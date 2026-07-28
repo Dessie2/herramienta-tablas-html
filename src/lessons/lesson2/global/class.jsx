@@ -1,4 +1,4 @@
-import AttributeLayout from "../../../components/AttributeLayout"
+import AttributeLayout from "../../../components/attributeLayout"
 
 export default function Class() {
   const paragraphs = [

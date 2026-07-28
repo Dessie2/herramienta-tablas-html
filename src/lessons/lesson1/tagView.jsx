@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom"
-import Table from "./Table"
-import TH from "./TH"
+import Table from "./table"
+import TH from "./th"
 import THead from "./thead"
-import Tbody from "./Tbody"
-import TR from "./TR"
-import TD from "./TD"
-import Caption from "./Caption"
-import TFoot from "./TFoot"
+import Tbody from "./tbody"
+import TR from "./tr"
+import TD from "./td"
+import Caption from "./caption"
+import TFoot from "./tfoot"
 
 
 const tagComponents = {

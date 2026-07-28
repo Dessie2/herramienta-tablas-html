@@ -1,4 +1,4 @@
-import LessonLayout from "../../components/LessonLayout"
+import LessonLayout from "../../components/lessonLayout"
 import tabla from "../../assets/images/leccion_1/table_border.svg"
 
 export default function Table_more() {

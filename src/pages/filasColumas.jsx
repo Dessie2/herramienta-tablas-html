@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Sidebar } from "../components/Sidebar"
-import { Header } from "../components/Header"
-import LessonNavRow from "../components/LessonNavRow"
-import HtmlPlayground from "../components/HtmlPlayground"
+import { Sidebar } from "../components/sidebar"
+import { Header } from "../components/header"
+import LessonNavRow from "../components/lessonNavRow"
+import HtmlPlayground from "../components/htmlPlayground"
 
 const attributes = [
   {

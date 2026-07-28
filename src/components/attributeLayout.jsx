@@ -1,6 +1,6 @@
-import { Sidebar } from "./Sidebar"
-import { Header } from "./Header"
-import LessonNavRow from "./LessonNavRow"
+import { Sidebar } from "./sidebar"
+import { Header } from "./header"
+import LessonNavRow from "./lessonNavRow"
 import { getLesson2Video } from "../assets/videos/lesson2Videos"
 
 export default function AttributeLayout({
