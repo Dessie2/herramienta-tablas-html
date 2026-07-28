@@ -3,7 +3,7 @@ import { getBackRoute } from "../utils/lessonBackRoutes"
 
 const HIDE_BACK_ON = ["/", "/concepts"]
 
-export default function BackButton({ to, className = "" }) {
+export default function BackButton({ to, className = "", variant = "default" }) {
   const navigate = useNavigate()
   const { pathname } = useLocation()
 
@@ -24,7 +24,9 @@ export default function BackButton({ to, className = "" }) {
     <button
       type="button"
       onClick={handleBack}
-      className={`lesson-nav-btn bg-azul text-white shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:bg-guinda/90 active:translate-y-0.5 active:shadow-none transition-all ${className}`}
+      className={`lesson-nav-btn${
+        variant === "edge" ? " lesson-nav-btn-back" : ""
+      } ${className}`}
     >
       &#8249; Regresar
     </button>

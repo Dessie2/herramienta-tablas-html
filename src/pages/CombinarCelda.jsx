@@ -5,27 +5,6 @@ import { Header } from "../components/Header"
 import LessonNavRow from "../components/LessonNavRow"
 import HtmlPlayground from "../components/HtmlPlayground"
 
-const defaultCode = `<table border="1">
-  <tr>
-    <th bgcolor="#A7DDA6">Fila 1</th>
-    <td>Columna 1</td>
-    <td align="center" bgcolor="#3224AA"><font color="white">Columna 2</font></td>
-  </tr>
-  <tr>
-    <th>Fila 2</th>
-    <td colspan="2" bgcolor="#D19800">Columna 1.2</td>
-  </tr>
-  <tr>
-    <th>Fila 3</th>
-    <td rowspan="2" bgcolor="#D19800">Columna 1.3</td>
-    <td>Columna 3.3</td>
-  </tr>
-  <tr>
-    <th>Fila 4</th>
-    <td>Columna 3.4</td>
-  </tr>
-</table>`
-
 const BANNER_INTERVAL_MS = 16000
 
 function IntroDiagram() {
@@ -163,7 +142,7 @@ function RotatingBanner() {
         type="button"
         onClick={prevSlide}
         aria-label="Banner anterior"
-        className="absolute -left-4 sm:-left-6 md:-left-8 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/90 text-azul font-bold shadow-md hover:bg-amarillo hover:text-azul transition-colors z-10"
+        className="absolute left-1 sm:-left-6 md:-left-8 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/90 text-azul font-bold shadow-md hover:bg-amarillo hover:text-azul transition-colors z-10"
       >
         &#8249;
       </button>
@@ -172,7 +151,7 @@ function RotatingBanner() {
         type="button"
         onClick={nextSlide}
         aria-label="Banner siguiente"
-        className="absolute -right-4 sm:-right-6 md:-right-8 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/90 text-azul font-bold shadow-md hover:bg-amarillo hover:text-azul transition-colors z-10"
+        className="absolute right-1 sm:-right-6 md:-right-8 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/90 text-azul font-bold shadow-md hover:bg-amarillo hover:text-azul transition-colors z-10"
       >
         &#8250;
       </button>
@@ -222,14 +201,14 @@ export default function CombinarCelda() {
             </div>
 
             <div className="w-full min-w-0 mb-6">
-              <HtmlPlayground initialHtml={defaultCode} />
+              <HtmlPlayground />
             </div>
           </div>
 
           <LessonNavRow>
             <button
               onClick={() => navigate("/quiz4")}
-              className="lesson-nav-btn bg-guinda text-white shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:bg-guinda/90 active:translate-y-0.5 active:shadow-none transition-all"
+              className="lesson-nav-btn"
             >
               Siguiente Lección
             </button>

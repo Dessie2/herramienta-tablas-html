@@ -15,15 +15,68 @@
   }
 
   .lesson-nav-row {
-    @apply flex w-full min-w-0 max-w-full justify-between items-center mt-auto pt-4 sm:pt-6 shrink-0;
+    @apply flex w-full min-w-0 max-w-full justify-between items-center mt-auto pt-6 sm:pt-8 md:pt-10 shrink-0;
   }
 
   .lesson-nav-btn {
-    @apply px-3 py-2 sm:px-6 rounded-lg font-bold text-xs sm:text-sm transition-colors max-w-full shrink-0;
+    @apply px-3 py-2 sm:px-6 rounded-lg font-bold text-xs sm:text-sm transition-all max-w-full shrink-0 bg-azul text-white shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:bg-guinda hover:shadow-[2px_2px_0px_rgba(0,0,0,0.2)] active:translate-y-0.5 active:shadow-none;
+  }
+
+  .lesson-nav-btn-back {
+    @apply relative;
+    left: -1rem;
+    top: 15px;
+  }
+
+  @screen sm {
+    .lesson-nav-btn-back {
+      left: -3rem;
+    }
+  }
+
+  @screen md {
+    .lesson-nav-btn-back {
+      left: -6.5rem;
+    }
+  }
+
+  .action-btn {
+    @apply bg-azul text-white font-bold shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:bg-guinda hover:shadow-[2px_2px_0px_rgba(0,0,0,0.2)] active:translate-y-0.5 active:shadow-none transition-all;
+  }
+
+  .lesson-page-shell {
+    @apply relative flex flex-col flex-1 min-h-0 w-full pb-14 sm:pb-16;
+  }
+
+  .lesson-more-row {
+    @apply absolute bottom-0 flex justify-end shrink-0 z-10;
+    right: -1rem;
+  }
+
+  @screen sm {
+    .lesson-more-row {
+      right: -1.5rem;
+    }
+  }
+
+  @screen md {
+    .lesson-more-row {
+      right: -2.5rem;
+    }
+  }
+
+  .lesson-more-row-main {
+    right: -1rem;
+  }
+
+  @screen sm {
+    .lesson-more-row-main {
+      right: -1.5rem;
+    }
   }
 
   .lesson-content-panel {
-    @apply border-l-4 border-amarillo min-w-0;
+    @apply border-l-4 border-amarillo min-w-0 min-h-0 md:min-h-[500px];
   }
 
   .lesson-code-block {

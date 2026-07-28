@@ -3,7 +3,7 @@ import LessonLayout from "../../components/LessonLayout"
 export default function Tbody_more() {
   return (
     <LessonLayout title="Etiqueta &lt;tbody&gt;" showNav>
-      <div className="lesson-content-panel bg-blanco w-full min-h-[600px] rounded-md shadow-md p-6 sm:p-10 flex flex-col flex-1">
+      <div className="lesson-content-panel bg-blanco w-full rounded-md shadow-md p-6 sm:p-10 flex flex-col flex-1">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 flex-1 min-w-0">
           <div className="flex flex-col text-base sm:text-lg lg:text-xl gap-4 max-w-md shrink-0">
             <p>
@@ -22,7 +22,7 @@ export default function Tbody_more() {
 
           <div className="flex flex-col gap-8 flex-1 min-w-0">
             <div className="flex flex-col sm:flex-row gap-4 flex-wrap justify-center">
-              <div className="p-2 flex flex-col gap-4 flex-1 min-w-[200px]">
+              <div className="p-2 flex flex-col gap-4 flex-1 min-w-0 w-full">
                 <h2 className="text-center font-bold">Tabla sin tbody</h2>
                 <table>
                   <tbody>
@@ -45,7 +45,7 @@ export default function Tbody_more() {
                 </table>
               </div>
 
-              <div className="p-2 flex flex-col gap-4 flex-1 min-w-[200px]">
+              <div className="p-2 flex flex-col gap-4 flex-1 min-w-0 w-full">
                 <h2 className="text-center font-bold">Tabla con tbody</h2>
                 <table>
                   <thead>

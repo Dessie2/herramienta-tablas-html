@@ -2,7 +2,7 @@ import LessonLayout from "../../components/LessonLayout"
 
 export default function Caption_more() {
   return (
-    <LessonLayout title="Etiqueta &lt;caption&gt;" showNav>
+    <LessonLayout title="Etiqueta &lt;caption&gt;" showNav backClassName="-ml-5">
       <div className="lesson-content-panel bg-blanco w-full rounded-md shadow-md p-6 sm:p-10">
         <div className="flex flex-col xl:flex-row gap-8 xl:gap-10 min-w-0">
           <div className="flex flex-col text-base sm:text-lg lg:text-xl gap-4 w-full xl:max-w-md xl:shrink-0">

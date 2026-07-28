@@ -62,25 +62,6 @@ const attributes = [
   },
 ]
 
-const defaultCode = `<table border="1">
-  <!-- Añadimos color al fondo del header -->
-  <tr>
-    <th bgcolor="#A7DDA6">Fila 1</th>
-    <td>Celda 1</td>
-    <td align="center">Centro</td>
-  </tr>
-  <tr>
-    <th bgcolor="#D19800">Fila 2</th>
-    <td bgcolor="#3224AA"><font color="yellow">Azul</font></td>
-    <td>Dato</td>
-  </tr>
-  <tr>
-    <th bgcolor="#D19800">Fila 3</th>
-    <td>Dato</td>
-    <td>Dato</td>
-  </tr>
-</table>`
-
 export default function FilasColumas() {
   const navigate = useNavigate()
   const [openAttr, setOpenAttr] = useState(null)
@@ -186,14 +167,14 @@ export default function FilasColumas() {
             </div>
 
             <div className="w-full min-w-0 mb-6">
-              <HtmlPlayground initialHtml={defaultCode} />
+              <HtmlPlayground />
             </div>
           </div>
 
           <LessonNavRow>
             <button
               onClick={() => navigate("/quiz3")}
-              className="lesson-nav-btn bg-guinda text-white shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:bg-guinda/90 active:translate-y-0.5 active:shadow-none transition-all"
+              className="lesson-nav-btn"
             >
               Siguiente Lección
             </button>

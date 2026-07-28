@@ -27,10 +27,13 @@ export default function Concepts() {
         <Sidebar />
 
         <main className="flex-1 min-w-0 bg-grisbg p-4 sm:p-6 md:p-10 relative flex flex-col overflow-x-hidden">
-          <div className="content-container flex flex-col flex-1 min-w-0">
+          <div className="content-container flex flex-col min-w-0">
             {/* Título Principal */}
-            <h1 className="text-3xl sm:text-4xl mt-2 font-extrabold text-azul text-center mb-8">
-              Definición y estructura básica de las <br /> Tablas en HTML
+            <h1 className="text-2xl sm:text-3xl md:text-4xl mt-2 font-extrabold text-azul text-center mb-6 sm:mb-8">
+              Definición y estructura básica de las{" "}
+              <span className="sm:hidden"> </span>
+              <br className="hidden sm:block" />
+              Tablas en HTML
             </h1>
 
             {/* Texto Descriptivo */}
@@ -53,16 +56,9 @@ export default function Concepts() {
                 type="button"
                 onClick={() => setShowExample(true)}
                 aria-label="Ver ejemplo de estructura de tabla"
-                className="flex flex-col items-center cursor-pointer group"
+                className="lesson-nav-btn"
               >
-                <span className="font-bold text-azul text-sm group-hover:text-guinda transition-colors animate-blink">
-                  Ejemplo
-                </span>
-                <div className="w-10 h-10 rounded-full bg-azul text-white flex items-center justify-center shadow-[3px_3px_0px_rgba(0,0,0,0.2)] group-hover:bg-guinda transition-all animate-blink">
-                  <svg className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
+                Ejemplo
               </button>
             </div>
 
@@ -106,11 +102,10 @@ export default function Concepts() {
             </div>
           </div>
 
-          {/* Botón Siguiente Lección  */}
-          <div className="lesson-nav-row justify-end">
+          <div className="absolute bottom-10 sm:bottom-14 right-4 sm:right-6 md:right-10">
             <button
               onClick={() => navigate("/quiz")}
-              className="lesson-nav-btn bg-azul text-white shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:bg-guinda hover:shadow-[2px_2px_0px_rgba(0,0,0,0.2)] active:translate-y-0.5 active:shadow-none transition-all"
+              className="lesson-nav-btn"
             >
               Siguiente Lección
             </button>

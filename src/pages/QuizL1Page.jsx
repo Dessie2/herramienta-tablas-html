@@ -5,7 +5,7 @@ import Quiz from "../components/QuizLesson1"
 
 export default function QuizPage() {
   return (
-    <div className="min-h-screen flex flex-col font-sans text-slate-800">
+    <div className="min-h-screen flex flex-col font-sans text-slate-800 overflow-x-hidden">
       <Header />
 
       <div className="flex flex-1 min-w-0">
@@ -16,7 +16,7 @@ export default function QuizPage() {
             <div className="flex-1 flex items-center justify-center">
               <Quiz />
             </div>
-            <LessonNavRow />
+            <LessonNavRow backVariant="edge" />
           </div>
         </main>
       </div>

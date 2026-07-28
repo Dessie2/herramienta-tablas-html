@@ -5,7 +5,7 @@ import Quiz from "../components/QuizLesson3"
 
 export default function QuizPage() {
   return (
-    <div className="min-h-screen flex flex-col font-sans text-slate-800">
+    <div className="min-h-screen flex flex-col font-sans text-slate-800 overflow-x-hidden">
       <Header />
 
       <div className="flex flex-1 min-w-0">

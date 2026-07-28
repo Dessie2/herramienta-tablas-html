@@ -51,7 +51,7 @@ export default function Reto() {
                 <button
                   type="button"
                   onClick={() => setShowHelp((prev) => !prev)}
-                  className="self-start sm:self-center shrink-0 bg-guinda text-white px-5 py-2 rounded-lg text-sm font-bold shadow-[3px_3px_0px_rgba(0,0,0,0.2)] hover:bg-guinda/90 active:translate-y-0.5 active:shadow-none transition-all"
+                  className="action-btn self-start sm:self-center shrink-0 px-5 py-2 rounded-lg text-sm"
                 >
                   ¡Ayuda!
                 </button>

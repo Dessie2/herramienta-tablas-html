@@ -263,10 +263,10 @@ export default function Attributes() {
                 <button
                   key={cat.id}
                   onClick={() => changeCategory(cat.id)}
-                  className={`flex-1 py-3 rounded-xl font-bold text-white text-xs sm:text-sm transition-all ${
+                  className={`flex-1 py-3 rounded-xl font-bold text-white text-xs sm:text-sm transition-all bg-azul shadow-md hover:bg-guinda hover:-translate-y-0.5 active:translate-y-0.5 ${
                     activeCategory === cat.id
-                      ? "bg-guinda shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:bg-guinda/90"
-                      : "bg-azul shadow-md hover:bg-azul/90 hover:-translate-y-0.5 active:translate-y-0.5"
+                      ? "shadow-[4px_4px_0px_rgba(0,0,0,0.2)] ring-2 ring-guinda/40"
+                      : ""
                   }`}
                 >
                   {cat.label}
@@ -332,10 +332,10 @@ export default function Attributes() {
                 </div>
               </div>
 
-              <div className="bg-white/80 border-l-4 border-amarillo rounded-r-xl shadow-sm p-6 sm:p-8 md:p-10 flex flex-col items-center text-center gap-8 lg:gap-10 md:mt-12 lg:mt-16 w-full">
+              <div className="bg-white/80 border-l-4 border-amarillo rounded-r-xl shadow-sm p-5 sm:p-6 flex flex-col items-center text-center gap-4 w-full">
                 {current ? (
                   <>
-                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed max-w-xs">
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed max-w-xs mx-auto">
                       {current.description.split(current.name).map((part, i, arr) =>
                         i < arr.length - 1 ? (
                           <span key={i}>
@@ -352,13 +352,13 @@ export default function Attributes() {
                         const folderName = categoryUrlMapping[activeCategory] || activeCategory
                         navigate(`/lessons/lesson2/${folderName}/${current.id}`)
                       }}
-                      className="bg-azul text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-[3px_3px_0px_rgba(0,0,0,0.2)] hover:bg-guinda active:translate-y-0.5 active:shadow-none transition-all"
+                      className="action-btn px-6 py-2.5 rounded-lg text-sm"
                     >
                       Ver más
                     </button>
                   </>
                 ) : (
-                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-xs italic">
+                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-xs mx-auto italic">
                     Selecciona un atributo para ver su descripción y ejemplo de código.
                   </p>
                 )}
@@ -369,7 +369,7 @@ export default function Attributes() {
           <LessonNavRow>
             <button
               onClick={() => navigate("/quiz2")}
-              className="lesson-nav-btn bg-guinda text-white shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:bg-guinda/90 active:translate-y-0.5 active:shadow-none transition-all"
+              className="lesson-nav-btn"
             >
               Siguiente Lección
             </button>

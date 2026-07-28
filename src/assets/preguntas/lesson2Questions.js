@@ -1,142 +1,112 @@
 export const lesson2Questions = [
   {
     id: 1,
-    question: "¿Para qué sirven los atributos en las tablas según el texto?",
-    options: [
-      "Para cambiar el tipo de fuente únicamente",
-      "Para mejorar su estilización (colores, formas, contenido y distribución)",
-      "Para hacerlas compatibles con bases de datos",
-      "Para eliminar el uso de etiquetas HTML"
-    ],
+    question: "¿Qué atributo define el espacio que existe entre una celda y otra?",
+    options: ["cellpadding", "cellspacing", "border", "align"],
     correctAnswer: 1,
-    explanation: "Los atributos sirven para mejorar la estilización de las tablas en aspectos como formas, colores, contenido y distribución."
+    explanation: "cellspacing define la separación entre las celdas de una tabla."
   },
   {
     id: 2,
-    question: "¿Por qué se menciona que la mayoría de estos atributos están obsoletos?",
-    options: [
-      "Porque ya ningún navegador los soporta",
-      "Por la estandarización de HTML5 y el uso de CSS",
-      "Porque hacían que las páginas cargaran más lento",
-      "Porque fueron reemplazados por JavaScript"
-    ],
-    correctAnswer: 1,
-    explanation: "La estandarización de HTML5 y la llegada de CSS dejaron obsoletos a la mayoría de estos atributos de presentación."
+    question: "¿Qué atributo define el espacio interno entre el contenido y el borde de una celda?",
+    options: ["cellpadding", "cellspacing", "width", "height"],
+    correctAnswer: 0,
+    explanation: "cellpadding controla el espacio interno de las celdas."
   },
   {
     id: 3,
-    question: "A pesar de estar obsoletos, ¿por qué se siguen utilizando algunos atributos?",
-    options: [
-      "Porque son obligatorios en HTML5",
-      "Siguen sirviendo de auxiliares y son menos complejas",
-      "Porque CSS no funciona en tablas",
-      "Para ocultar el contenido de la tabla"
-    ],
-    correctAnswer: 1,
-    explanation: "El texto indica que siguen sirviendo de auxiliares y resultan menos complejas en ciertos escenarios."
+    question: "¿Qué atributo permite mostrar el borde de una tabla?",
+    options: ["border", "background", "bgcolor", "bordercolor"],
+    correctAnswer: 0,
+    explanation: "El atributo border establece el grosor del borde de la tabla."
   },
   {
     id: 4,
-    question: "¿Cuál de los siguientes NO es una de las pestañas o categorías de atributos visibles en la imagen?",
-    options: [
-      "Atributos Relación-Aspecto",
-      "Atributos Globales",
-      "Atributos de Estilo",
-      "Atributos de Animación"
-    ],
-    correctAnswer: 3,
-    explanation: "Las categorías mostradas son: Relación-Aspecto, Globales y de Estilo."
+    question: "¿Qué atributo se utiliza para definir el ancho de una tabla?",
+    options: ["height", "width", "align", "style"],
+    correctAnswer: 1,
+    explanation: "width establece el ancho de una tabla."
   },
   {
     id: 5,
-    question: "¿Qué establece específicamente la propiedad u atributo 'border' en HTML?",
-    options: [
-      "El color del fondo de la tabla",
-      "El grosor del borde de la tabla y sus celdas",
-      "La alineación del texto dentro de las celdas",
-      "El margen externo de la tabla"
-    ],
+    question: "¿Qué atributo permite establecer la altura de una tabla?",
+    options: ["width", "height", "bgcolor", "title"],
     correctAnswer: 1,
-    explanation: "La propiedad border establece el grosor del borde de la tabla y de sus celdas."
+    explanation: "height define la altura de una tabla."
   },
   {
     id: 6,
-    question: "¿Cuál es el beneficio de visualizar la estructura de filas y columnas mediante 'border'?",
-    options: [
-      "Aumenta la velocidad de carga",
-      "Permite visualizar claramente la estructura interna de la tabla",
-      "Cambia el color de la fuente automáticamente",
-      "Añade un título al pie de la tabla"
-    ],
-    correctAnswer: 1,
-    explanation: "Establecer un borde permite ver de forma explícita la cuadrícula o estructura de las filas y columnas."
+    question: "¿Qué atributo se utiliza para alinear una tabla horizontalmente?",
+    options: ["align", "style", "class", "id"],
+    correctAnswer: 0,
+    explanation: "align permite alinear una tabla a la izquierda, centro o derecha."
   },
   {
     id: 7,
-    question: "En el código de ejemplo de la imagen, ¿qué valor se le asigna al atributo border?",
-    options: ["border=\"0\"", "border=\"1\"", "border=\"5\"", "border=\"solid\""],
+    question: "¿Qué atributo identifica de forma única un elemento HTML?",
+    options: ["class", "id", "style", "title"],
     correctAnswer: 1,
-    explanation: "En la primera línea del ejemplo se observa: <table border=\"1\">."
+    explanation: "El atributo id identifica de manera única un elemento."
   },
   {
     id: 8,
-    question: "¿A qué elemento se le aplica directamente el atributo 'border' en el ejemplo de código?",
-    options: ["<caption >", "<tbody>", "<tr>", "<table>"],
-    correctAnswer: 3,
-    explanation: "El atributo border se escribe dentro de la etiqueta de apertura <table>."
+    question: "¿Qué atributo permite asignar una misma clase a varios elementos HTML?",
+    options: ["id", "class", "style", "title"],
+    correctAnswer: 1,
+    explanation: "class agrupa elementos que comparten el mismo estilo."
   },
   {
     id: 9,
-    question: "¿Cuál de los siguientes botones pertenece a las opciones inferiores de atributos de Relación-Aspecto?",
-    options: ["color", "font-size", "cellspacing", "background"],
-    correctAnswer: 2,
-    explanation: "En la barra inferior se muestran: cellspacing, cellpadding, border, width, height y align."
+    question: "¿Qué atributo permite aplicar estilos CSS directamente a un elemento?",
+    options: ["class", "style", "id", "align"],
+    correctAnswer: 1,
+    explanation: "style permite agregar estilos en línea al elemento."
   },
   {
     id: 10,
-    question: "El atributo 'cellpadding' sirve para modificar el espacio interno de las celdas.",
-    options: ["Verdadero", "Falso"],
-    correctAnswer: 0,
-    explanation: "El padding controla el espacio entre el contenido de la celda y sus bordes internos."
+    question: "¿Qué atributo muestra un texto informativo cuando el cursor pasa sobre un elemento?",
+    options: ["style", "title", "class", "width"],
+    correctAnswer: 1,
+    explanation: "title muestra un mensaje descriptivo al colocar el cursor sobre el elemento."
   },
   {
     id: 11,
-    question: "¿Cuál de los siguientes atributos inferiores se utiliza para definir el ancho de la tabla?",
-    options: ["height", "width", "align", "cellspacing"],
+    question: "¿Qué atributo cambia el color de fondo de una tabla?",
+    options: ["background", "bgcolor", "bordercolor", "style"],
     correctAnswer: 1,
-    explanation: "El atributo 'width' especifica el ancho de la tabla o de una celda."
+    explanation: "bgcolor establece el color de fondo de la tabla."
   },
   {
     id: 12,
-    question: "¿Qué atributo de la lista inferior se encarga de la altura de la tabla?",
-    options: ["align", "border", "height", "cellpadding"],
-    correctAnswer: 2,
-    explanation: "'height' determina la altura del elemento."
+    question: "¿Qué atributo permite utilizar una imagen como fondo de una tabla?",
+    options: ["background", "bgcolor", "style", "title"],
+    correctAnswer: 0,
+    explanation: "background recibe la ruta de una imagen para usarla como fondo."
   },
   {
     id: 13,
-    question: "¿Qué atributo controla la alineación (izquierda, centro, derecha) de la tabla o su contenido?",
-    options: ["align", "width", "cellspacing", "border"],
-    correctAnswer: 0,
-    explanation: "El atributo 'align' se utiliza para posicionar o alinear horizontalmente el elemento."
+    question: "¿Qué atributo cambia el color del borde de una tabla?",
+    options: ["border", "bordercolor", "bgcolor", "background"],
+    correctAnswer: 1,
+    explanation: "bordercolor establece el color del borde."
   },
   {
     id: 14,
-    question: "En el ejemplo de código, ¿qué celdas pertenecen a la primera fila (<tr>)?",
+    question: "¿Cuál es la diferencia entre cellspacing y cellpadding?",
     options: [
-      "Celda A1, Celda A2, Celda A3",
-      "Celda B1, Celda B2, Celda B3",
-      "Tabla de Muestra",
-      "Todas las celdas de la tabla"
+      "No existe diferencia.",
+      "cellspacing controla el espacio entre celdas y cellpadding el espacio interno de cada celda.",
+      "cellpadding cambia el color y cellspacing el tamaño.",
+      "Ambos cambian el borde."
     ],
-    correctAnswer: 0,
-    explanation: "El primer bloque <tr> contiene las celdas de datos A1, A2 y A3."
+    correctAnswer: 1,
+    explanation: "cellspacing separa las celdas entre sí, mientras que cellpadding agrega espacio dentro de ellas."
   },
   {
     id: 15,
-    question: "¿Qué atributo de la lista inferior se utiliza para controlar el espacio entre las celdas (el espacio de separación mutuo)?",
-    options: ["cellpadding", "cellspacing", "align", "border"],
-    correctAnswer: 1,
-    explanation: "'cellspacing' define el espacio o separación que existe entre las celdas de una tabla."
+    question: "¿Cuál de los siguientes atributos es considerado un atributo global de HTML?",
+    options: ["id", "class", "style y title", "Todos los anteriores"],
+    correctAnswer: 3,
+    explanation: "id, class, style y title son atributos globales que pueden utilizarse en cualquier elemento HTML."
   }
-]
+];

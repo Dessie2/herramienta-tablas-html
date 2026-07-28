@@ -4,7 +4,7 @@ import tabla from "../../assets/images/leccion_1/table_border.svg"
 export default function Table_more() {
   return (
     <LessonLayout title="Etiqueta&lt;table&gt;" showNav>
-      <div className="lesson-content-panel bg-blanco w-full min-h-[600px] rounded-md shadow-md p-6 sm:p-10 flex flex-col flex-1">
+      <div className="lesson-content-panel bg-blanco w-full rounded-md shadow-md p-6 sm:p-10 flex flex-col flex-1">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 flex-1 min-w-0">
           <div className="flex flex-col text-base sm:text-lg lg:text-xl gap-4 max-w-md shrink-0">
             <p>
