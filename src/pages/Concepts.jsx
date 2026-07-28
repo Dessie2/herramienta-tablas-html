@@ -68,18 +68,22 @@ export default function Concepts() {
             </p>
 
             {/* Cuadrícula de Tags */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full min-w-0 overflow-hidden">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full min-w-0 p-1">
               {tags.map((tag, i) => (
-                <button
+                <div
                   key={i}
-                  onClick={() => navigate(`/lessons/lesson1/${tag.name.replace(/[<>]/g, "")}`)}
+                  className="animate-fade-up"
                   style={{ animationDelay: `${i * 70}ms` }}
+                >
+                <button
+                  type="button"
+                  onClick={() => navigate(`/lessons/lesson1/${tag.name.replace(/[<>]/g, "")}`)}
                   className={`
-                    group relative h-32 sm:h-40 flex flex-col items-center justify-center
+                    group relative h-32 sm:h-40 w-full flex flex-col items-center justify-center
                     rounded-xl border-2 border-b-[5px] bg-gradient-to-br ${tag.gradient} ${tag.border}
-                    shadow-md hover:shadow-lg hover:-translate-y-1
-                    active:translate-y-0.5 active:shadow-sm
-                    transition-all duration-200 animate-fade-up
+                    shadow-md transition-transform duration-300 ease-out
+                    hover:scale-110 hover:-translate-y-2 hover:shadow-xl hover:z-10
+                    active:scale-105 active:translate-y-0 active:shadow-md
                   `}
                 >
                   <span className="absolute top-2 left-2 w-7 h-7 rounded-full bg-azul text-white text-xs font-black flex items-center justify-center shadow-sm">
@@ -98,6 +102,7 @@ export default function Concepts() {
                     ⌄
                   </span>
                 </button>
+                </div>
               ))}
             </div>
           </div>
