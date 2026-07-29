@@ -1,4 +1,5 @@
 import LessonLayout from "../../components/lessonLayout"
+import LessonVideo from "../../components/lessonVideo"
 import tabla from "../../assets/images/leccion_1/table_border.svg"
 
 export default function Table_more() {
@@ -33,13 +34,10 @@ export default function Table_more() {
               className="w-full max-w-[400px] h-auto object-contain"
             />
 
-            <div className="flex justify-center w-full">
-              <iframe
-                src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006068/table_oludmj.mp4"
-                title="Video demostrativo table"
-                className="w-full max-w-[600px] aspect-video rounded-lg"
-              />
-            </div>
+            <LessonVideo
+              src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006068/table_oludmj.mp4"
+              title="Video demostrativo table"
+            />
           </div>
         </div>
       </div>

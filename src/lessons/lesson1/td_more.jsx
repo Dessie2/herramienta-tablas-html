@@ -1,4 +1,5 @@
 import LessonLayout from "../../components/lessonLayout"
+import LessonVideo from "../../components/lessonVideo"
 
 export default function TD_more() {
   return (
@@ -44,13 +45,10 @@ export default function TD_more() {
               </table>
             </div>
 
-            <div className="flex justify-center">
-              <iframe
-                src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006077/td_jfcagx.mp4"
-                title="Video demostrativo td"
-                className="w-full max-w-[600px] aspect-video rounded-lg"
-              />
-            </div>
+            <LessonVideo
+              src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006077/td_jfcagx.mp4"
+              title="Video demostrativo td"
+            />
           </div>
         </div>
       </div>

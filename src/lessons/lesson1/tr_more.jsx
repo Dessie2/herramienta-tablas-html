@@ -1,4 +1,5 @@
 import LessonLayout from "../../components/lessonLayout"
+import LessonVideo from "../../components/lessonVideo"
 
 export default function TR_more() {
   return (
@@ -43,13 +44,10 @@ export default function TR_more() {
               </p>
             </div>
 
-            <div className="flex justify-center w-full">
-              <iframe
-                src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006079/tr_dmo0mf.mp4"
-                title="Video demostrativo tr"
-                className="w-full max-w-[600px] aspect-video rounded-lg"
-              />
-            </div>
+            <LessonVideo
+              src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006079/tr_dmo0mf.mp4"
+              title="Video demostrativo tr"
+            />
           </div>
         </div>
       </div>

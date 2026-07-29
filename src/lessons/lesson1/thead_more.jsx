@@ -1,4 +1,5 @@
 import LessonLayout from "../../components/lessonLayout"
+import LessonVideo from "../../components/lessonVideo"
 
 export default function Thead_more() {
   return (
@@ -62,13 +63,10 @@ export default function Thead_more() {
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <iframe
-                src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006075/thead_rcjzqe.mp4"
-                title="Video demostrativo thead"
-                className="w-full max-w-[600px] aspect-video rounded-lg"
-              />
-            </div>
+            <LessonVideo
+              src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006075/thead_rcjzqe.mp4"
+              title="Video demostrativo thead"
+            />
           </div>
         </div>
       </div>

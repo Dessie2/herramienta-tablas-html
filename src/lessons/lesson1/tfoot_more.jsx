@@ -1,4 +1,5 @@
 import LessonLayout from "../../components/lessonLayout"
+import LessonVideo from "../../components/lessonVideo"
 
 export default function TFoot_more() {
   return (
@@ -72,13 +73,10 @@ export default function TFoot_more() {
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <iframe
-                src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006075/tfoot_hxnudw.mp4"
-                title="Video demostrativo tfoot"
-                className="w-full max-w-[600px] aspect-video rounded-lg"
-              />
-            </div>
+            <LessonVideo
+              src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006075/tfoot_hxnudw.mp4"
+              title="Video demostrativo tfoot"
+            />
           </div>
         </div>
       </div>

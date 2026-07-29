@@ -1,9 +1,10 @@
 import LessonLayout from "../../components/lessonLayout"
+import LessonVideo from "../../components/lessonVideo"
 
 export default function Caption_more() {
   return (
     <LessonLayout title="Etiqueta &lt;caption&gt;" showNav backClassName="-ml-5">
-      <div className="lesson-content-panel bg-blanco w-full rounded-md shadow-md p-6 sm:p-10">
+      <div className="lesson-content-panel bg-blanco w-full rounded-md shadow-md p-6 sm:p-10 flex flex-col">
         <div className="flex flex-col xl:flex-row gap-8 xl:gap-10 min-w-0">
           <div className="flex flex-col text-base sm:text-lg lg:text-xl gap-4 w-full xl:max-w-md xl:shrink-0">
             <p>
@@ -68,13 +69,10 @@ export default function Caption_more() {
               </div>
             </div>
 
-            <div className="flex justify-center w-full">
-              <iframe
-                src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006074/caption_njbnsw.mp4"
-                title="Video demostrativo caption"
-                className="w-full max-w-[600px] aspect-video rounded-lg"
-              />
-            </div>
+            <LessonVideo
+              src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006074/caption_njbnsw.mp4"
+              title="Video demostrativo caption"
+            />
           </div>
         </div>
       </div>

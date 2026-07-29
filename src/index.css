@@ -15,7 +15,7 @@
   }
 
   .lesson-nav-row {
-    @apply flex w-full min-w-0 max-w-full justify-between items-center mt-auto pt-6 sm:pt-8 md:pt-10 shrink-0;
+    @apply flex w-full min-w-0 max-w-full justify-between items-center pt-4 shrink-0;
   }
 
   .lesson-nav-btn {
@@ -76,7 +76,15 @@
   }
 
   .lesson-content-panel {
-    @apply border-l-4 border-amarillo min-w-0 min-h-0 md:min-h-[500px];
+    @apply border-l-4 border-amarillo min-w-0;
+  }
+
+  .lesson-video {
+    @apply aspect-video overflow-hidden rounded-lg bg-griscroll;
+  }
+
+  .lesson-video__player {
+    @apply block h-full w-full object-contain;
   }
 
   .lesson-code-block {

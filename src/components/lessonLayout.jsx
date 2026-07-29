@@ -18,19 +18,16 @@ export default function LessonLayout({
       <div className="flex flex-1 min-w-0 min-h-0 overflow-hidden">
         <Sidebar />
 
-        <main className="flex-1 min-w-0 min-h-0 bg-grisbg flex flex-col overflow-y-auto overflow-x-hidden">
-          <div className="content-container flex flex-col flex-1 min-h-0 min-w-0 p-4 sm:p-6 md:p-10">
-            <h1 className="text-3xl sm:text-4xl mt-2 font-extrabold text-azul text-center mb-6 sm:mb-10 shrink-0">
+        <main className="flex-1 min-w-0 min-h-0 bg-grisbg overflow-y-auto overflow-x-hidden">
+          <div className="content-container flex flex-col min-w-0 px-4 sm:px-6 md:px-10 pt-4 sm:pt-6 md:pt-10 pb-4">
+            <h1 className="text-3xl sm:text-4xl mt-2 font-extrabold text-azul text-center mb-4 sm:mb-6 shrink-0">
               {title}
             </h1>
-            <div className="flex flex-col flex-1 min-h-0 w-full">{children}</div>
-          </div>
-
-          {showNav && (
-            <div className="content-container shrink-0 px-4 sm:px-6 md:px-10 pb-4 sm:pb-6 md:pb-10 mt-auto">
+            <div className="flex flex-col w-full shrink-0">{children}</div>
+            {showNav && (
               <LessonNavRow backTo={backTo} backVariant="edge" backClassName={backClassName} />
-            </div>
-          )}
+            )}
+          </div>
         </main>
       </div>
     </div>

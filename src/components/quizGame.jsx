@@ -34,6 +34,8 @@ const neutralGifs = [
   "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXE3ZmViOHUyeTlkMDRvanZpYzdzNTg5Z2FnbzAwaHFmeDVteG00YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/H4DjXQXamtTiIuCcRU/giphy.gif",
 ]
 
+const FEEDBACK_DURATION_MS = 3500
+
 export default function QuizGame({ questions = [], onCorrectNavigate = "/attributes" }) {
   const navigate = useNavigate()
 
@@ -104,9 +106,9 @@ export default function QuizGame({ questions = [], onCorrectNavigate = "/attribu
     setCurrentGif(gifArray[Math.floor(Math.random() * gifArray.length)])
 
     if (correct) {
-      setTimeout(() => navigate(onCorrectNavigate), 2500)
+      setTimeout(() => navigate(onCorrectNavigate), FEEDBACK_DURATION_MS)
     } else {
-      setTimeout(() => loadRandomQuestion(), 3500)
+      setTimeout(() => loadRandomQuestion(), FEEDBACK_DURATION_MS)
     }
   }
 

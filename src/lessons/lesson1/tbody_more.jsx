@@ -1,4 +1,5 @@
 import LessonLayout from "../../components/lessonLayout"
+import LessonVideo from "../../components/lessonVideo"
 
 export default function Tbody_more() {
   return (
@@ -71,13 +72,10 @@ export default function Tbody_more() {
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <iframe
-                src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006071/tbody_v0xdgr.mp4"
-                title="Video demostrativo tbody"
-                className="w-full max-w-[600px] aspect-video rounded-lg"
-              />
-            </div>
+            <LessonVideo
+              src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006071/tbody_v0xdgr.mp4"
+              title="Video demostrativo tbody"
+            />
           </div>
         </div>
       </div>

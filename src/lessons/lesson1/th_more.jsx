@@ -1,4 +1,5 @@
 import LessonLayout from "../../components/lessonLayout"
+import LessonVideo from "../../components/lessonVideo"
 
 export default function TH_More() {
   return (
@@ -57,13 +58,10 @@ export default function TH_More() {
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <iframe
-                src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006069/th_rgjsab.mp4"
-                title="Video demostrativo th"
-                className="w-full max-w-[600px] aspect-video rounded-lg"
-              />
-            </div>
+            <LessonVideo
+              src="https://res.cloudinary.com/fci62b4m/video/upload/v1785006069/th_rgjsab.mp4"
+              title="Video demostrativo th"
+            />
           </div>
         </div>
       </div>

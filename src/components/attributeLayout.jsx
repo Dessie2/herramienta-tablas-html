@@ -1,6 +1,7 @@
 import { Sidebar } from "./sidebar"
 import { Header } from "./header"
 import LessonNavRow from "./lessonNavRow"
+import LessonVideo from "./lessonVideo"
 import { getLesson2Video } from "../assets/videos/lesson2Videos"
 
 export default function AttributeLayout({
@@ -57,13 +58,7 @@ export default function AttributeLayout({
                   </div>
 
                   {resolvedVideoSrc && (
-                    <div className="flex justify-center w-full">
-                      <iframe
-                        src={resolvedVideoSrc}
-                        title={videoTitle}
-                        className="w-full max-w-[600px] aspect-video rounded-lg"
-                      />
-                    </div>
+                    <LessonVideo src={resolvedVideoSrc} title={videoTitle} />
                   )}
                 </div>
               </div>
